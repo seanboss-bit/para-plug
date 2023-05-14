@@ -1,0 +1,127 @@
+.mainnav {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  z-index: 98;
+}
+.navinner {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
+.navinner a {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0px 15px;
+}
+.navinner a:hover {
+  transition: 0.3s;
+  color: #a11f25;
+}
+.navinner svg {
+  height: 30px;
+}
+
+.shopping,
+.shop {
+  position: relative;
+}
+.shop {
+  display: none;
+}
+.shopping span,
+.shop span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #a11f25;
+  color: #fff;
+  position: absolute;
+  top: -20%;
+  right: 10%;
+}
+.navinner img {
+  width: 100px;
+  object-fit: contain;
+  margin-top: -8px;
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+.bars {
+  display: none;
+}
+.res {
+  flex: 1;
+}
+@media screen and (max-width: 1200px) {
+  .navinner {
+    gap: 0px;
+    justify-content: space-between;
+  }
+  .bars {
+    display: block;
+  }
+  .links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: block;
+    background: #fff;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    z-index: 99;
+    transition: 0.3s;
+  }
+  .reslink {
+    position: fixed;
+    top: 0;
+    right: 0%;
+    display: block;
+    background: #fff;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    z-index: 99;
+    transition: 0.3s;
+  }
+  .links .bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 30px 20px;
+  }
+  .reslink .bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 30px 20px;
+  }
+  .shopping {
+    display: none;
+  }
+  .navlink {
+    margin: 20px 0px;
+    padding: 0px 20px;
+  }
+  .navlink a {
+    display: block;
+  }
+  .res {
+    flex: 0;
+    display: flex;
+    align-items: center;
+  }
+  .shop {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+}

@@ -1,0 +1,39 @@
+.heading svg {
+  height: 20px;
+  margin: 20px 0px;
+}
+.card {
+  border: 1px solid #aaa;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.card img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+.card h5 {
+  text-transform: capitalize;
+  font-size: 15px;
+}
+.low {
+  text-transform: capitalize;
+  font-size: 12px;
+}
+.card p {
+  margin-bottom: 0;
+}
+.price {
+  font-size: 19px;
+  font-weight: 700;
+}
+.sale {
+  background: #eee;
+  width: fit-content;
+  padding: 5px 10px;
+  text-transform: capitalize;
+}
+.recommend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}

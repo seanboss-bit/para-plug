@@ -1,0 +1,11 @@
+.inner img {
+  width: 100px;
+  object-fit: contain;
+  padding: 30px 0px;
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

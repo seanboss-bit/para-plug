@@ -1,5 +1,5 @@
-'use client';
-import { useState } from "react";
+"use client";
+import { useEffect, useState } from "react";
 import styles from "../src/styles/nav.module.css";
 import Link from "next/link";
 import {
@@ -11,8 +11,19 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
+  const [navScroll, setNavScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 90) {
+        setNavScroll(true);
+      } else {
+        setNavScroll(false);
+      }
+    });
+  }, []);
   return (
-    <div className={styles.mainnav}>
+    <div className={navScroll ? styles.mainnav2 : styles.mainnav}>
       <div className="container">
         <div className={styles.navinner}>
           <Link href="/">
@@ -33,8 +44,6 @@ const Navbar = () => {
               </div>
               <div className={styles.navlink}>
                 <Link href="/store">store</Link>
-                <Link href="/store">Nikes</Link>
-                <Link href="/store">Jordans</Link>
                 <Link href="/refund">Refund Policy</Link>
                 <Link href="/contact">Customer Care</Link>
                 <Link href="/about">About Us</Link>

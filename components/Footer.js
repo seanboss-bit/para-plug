@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
+    <div className={styles.main}>
       <div className="container">
         <div className={styles.footerInner}>
           <Image
@@ -17,11 +17,14 @@ const Footer = () => {
           />
           <div className={styles.links}>
             <Link href={"/store"}>store</Link>
-            <Link href={"/about"}>about us</Link>
-            <Link href={"/contact"}>contact us</Link>
+            <Link href={"/about"}>About us</Link>
+            <Link href={"/contact"}>Contact us</Link>
           </div>
           <div className={styles.socials}>
-          <i className="fa-brands fa-instagram"></i>
+            <a href="#">
+              {" "}
+              <i className="fa-brands fa-instagram"></i>
+            </a>
           </div>
         </div>
       </div>

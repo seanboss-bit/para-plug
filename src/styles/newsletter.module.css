@@ -33,11 +33,14 @@
   text-transform: capitalize;
   font-weight: 600;
   color: #fff;
+  font-size: 50px;
+  margin-bottom: 40px;
 }
 .inner span {
   text-transform: capitalize;
   margin-bottom: 20px;
   color: #fff;
+  font-weight: 600;
 }
 .inputbox {
   display: flex;
@@ -52,7 +55,7 @@
   border: none;
   border-bottom: 1px solid #fff;
   margin-right: 2px;
-  color: #fff;
+  color: #fff ;
 }
 .inputbox input:focus {
   outline: none;
@@ -76,5 +79,6 @@
   }
   .inner h3 {
     margin-bottom: 50px;
+    font-size: 24px;
   }
 }

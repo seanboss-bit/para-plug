@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from '../../../components/Navbar'
+import Footer from '../../../components/Footer'
+import ContactBody from '../../../components/ContactBody'
 
 const page = () => {
   return (
-    <div>contact page</div>
+    <div>
+      <Navbar />
+      <ContactBody />
+      <Footer />
+    </div>
   )
 }
 

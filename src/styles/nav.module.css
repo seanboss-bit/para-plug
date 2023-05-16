@@ -16,7 +16,7 @@
 .navinner {
   display: flex;
   align-items: center;
-  gap: 150px;
+  gap: 180px;
 }
 .navinner a {
   color: #000;
@@ -28,6 +28,9 @@
 .navinner a:hover {
   transition: 0.3s;
   color: #a11f25;
+}
+.active{
+  color: #a11f25 !important;
 }
 .navinner svg {
   height: 30px;

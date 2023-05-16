@@ -1,0 +1,92 @@
+.refund {
+  padding-top: 100px;
+}
+.refund h2 {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 20px 0px;
+}
+.refund span {
+  text-transform: capitalize;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+  letter-spacing: 1.5px;
+}
+.addressbox {
+  margin-bottom: 20px;
+}
+.addressbox h6 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+.addressbox p {
+  margin-bottom: 0px;
+  font-size: 15px;
+  font-weight: 300;
+}
+.two {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.wordings {
+  flex: 2;
+  padding: 20px;
+}
+.address {
+  flex: 1;
+  border-right: 1.5px solid #eee;
+}
+.wordings p {
+  margin-bottom: 0px;
+  font-size: 17px;
+  font-weight: 600;
+}
+.ref {
+  margin: 60px 0px !important;
+  font-style: italic;
+}
+.write {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+.write a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-decoration: none;
+  background: #0084d6;
+  margin: 30px 0px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.write a:hover {
+  background: #3ea4e3;
+  transition: 0.3s ease-in-out;
+}
+.write a:hover svg {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+.write svg {
+  height: 20px;
+}
+@media screen and (max-width: 768px) {
+  .address {
+    border: none;
+    padding: 10px;
+  }
+  .wordings {
+    padding: 10px;
+  }
+}

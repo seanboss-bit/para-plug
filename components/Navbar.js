@@ -8,10 +8,12 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
   const [navScroll, setNavScroll] = useState(false);
+  const route = usePathname();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -43,10 +45,15 @@ const Navbar = () => {
                 <XMarkIcon />
               </div>
               <div className={styles.navlink}>
-                <Link href="/store">store</Link>
-                <Link href="/refund">Refund Policy</Link>
-                <Link href="/contact">Customer Care</Link>
-                <Link href="/about">About Us</Link>
+                <Link
+                  href="/store"
+                  className={route === "/store" ? styles.active : null}
+                >
+                  store
+                </Link>
+                <Link href="/refund" className={route === "/refund" ? styles.active : null}>Refund Policy</Link>
+                <Link href="/contact" className={route === "/contact" ? styles.active : null}>Customer Care</Link>
+                <Link href="/about" className={route === "/about" ? styles.active : null}>About Us</Link>
               </div>
               <Link href="/cart" className={styles.shopping}>
                 <ShoppingCartIcon />

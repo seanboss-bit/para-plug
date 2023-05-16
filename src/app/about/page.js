@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Navbar from "../../../components/Navbar";
+import AboutBody from "../../../components/AboutBody";
+import Footer from "../../../components/Footer";
 
 const page = () => {
   return (
-    <div>about page</div>
-  )
-}
+    <div>
+      <Navbar />
+      <AboutBody />
+      <Footer />
+    </div>
+  );
+};
 
-export default page
+export default page;

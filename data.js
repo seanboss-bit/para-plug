@@ -9,6 +9,14 @@ export const products = [
     description: "lorem",
     reviews: ["review 1", "review 2"],
     sizes: ["44", "33", "40"],
+    freeShipping: true,
+    slashPrice: 800,
+    extraImg: [
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-2.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-3.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-4.jpg",
+    ],
   },
   {
     id: 2,
@@ -17,9 +25,17 @@ export const products = [
     price: 1000,
     img: "https://paraplug.org/wp-content/uploads/2021/03/sports-shoe1-600x600.jpg",
     lastPrice: 500,
+    slashPrice: 800,
     description: "lorem",
     reviews: ["review 1", "review 2"],
     sizes: ["44", "33", "40"],
+    freeShipping: true,
+    extraImg: [
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-2.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-3.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-4.jpg",
+    ],
   },
   {
     id: 3,
@@ -31,6 +47,13 @@ export const products = [
     description: "lorem",
     reviews: ["review 1", "review 2"],
     sizes: ["44", "33", "40"],
+    freeShipping: false,
+    extraImg: [
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-2.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-3.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-4.jpg",
+    ],
   },
   {
     id: 4,
@@ -39,8 +62,16 @@ export const products = [
     price: 1000,
     img: "https://paraplug.org/wp-content/uploads/2021/03/sports-shoe1-600x600.jpg",
     lastPrice: 500,
+    slashPrice: 800,
     description: "lorem",
     reviews: ["review 1", "review 2"],
     sizes: ["44", "33", "40"],
+    freeShipping: false,
+    extraImg: [
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-2.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-3.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022.jpg",
+      "https://paraplug.org/wp-content/uploads/2017/12/AIR-JORDAN-3-RETRO-FIRE-RED-2022-4.jpg",
+    ],
   },
 ];

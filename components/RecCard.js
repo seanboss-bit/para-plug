@@ -3,7 +3,7 @@ import styles from "../src/styles/recomended.module.css";
 import Link from "next/link";
 const RecCard = () => {
   return (
-    <Link href='/' className={styles.card}>
+    <Link href='/product/123' className={styles.card}>
       <img
         src="https://images.stockx.com/images/Air-Jordan-1-High-OG-Spider-Man-Across-the-Spider-Verse-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1683568981&q=60"
         alt="#"

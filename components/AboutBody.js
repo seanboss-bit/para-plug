@@ -21,7 +21,7 @@ const AboutBody = () => {
             alt="#"
           />
         </div>
-        <div className={styles.management}>
+        {/* <div className={styles.management}>
           <h2>our management</h2>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic,
@@ -53,7 +53,7 @@ const AboutBody = () => {
               <span>position</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

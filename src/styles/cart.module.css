@@ -143,6 +143,22 @@
   text-decoration: none;
   color: #000;
 }
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-transform: capitalize;
+  margin: 40px 0px;
+  margin-bottom: 148px;
+}
+.empty svg {
+  height: 20px;
+}
+.empty a{
+  color: #a4a4a4;
+  text-decoration: none;
+}
 @media screen and (max-width: 768px) {
   .cartsummary {
     flex-direction: column-reverse;

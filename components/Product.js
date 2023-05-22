@@ -4,10 +4,12 @@ import styles from "../src/styles/product.module.css";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { products } from "../data";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../src/redux/features/cartReducer";
 
 const Product = () => {
   const id = useParams();
-
+  const dispatch = useDispatch();
   let item = products?.find((one) => {
     if (Number(id.id) === one.id) {
       return one;
@@ -20,6 +22,10 @@ const Product = () => {
     setBigImg(item.extraImg[i]);
   };
 
+  const add = (product) => {
+    dispatch(addProduct(product));
+  };
+
   return (
     <div className={styles.productmain}>
       <div className="container">
@@ -29,6 +35,7 @@ const Product = () => {
             <div className={styles.subimages}>
               {item.extraImg.map((img, i) => (
                 <Image
+                  key={i}
                   width={100}
                   height={100}
                   src={img}
@@ -55,15 +62,17 @@ const Product = () => {
             </div>
             <div>
               <div className={styles.options}>
-                <input type="number" placeholder={1} defaultValue={1} />
+                {/* <input type="number" placeholder={1} defaultValue={1} /> */}
                 <select>
                   <option>size</option>
-                  {item.sizes.map((size) => (
-                    <option> {size}</option>
+                  {item.sizes.map((size, i) => (
+                    <option key={i}> {size}</option>
                   ))}
                 </select>
               </div>
-              <button className={styles.btn}>add to cart</button>
+              <button className={styles.btn} onClick={() => add(item)}>
+                add to cart
+              </button>
             </div>
           </div>
         </div>

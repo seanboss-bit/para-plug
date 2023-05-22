@@ -1,5 +1,6 @@
 .product {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   justify-content: space-around;
 }
@@ -88,20 +89,22 @@
   border: 1px solid #0084d6;
 }
 
-@media screen and (max-width: 1200px){
-  .product{
+
+@media screen and (max-width: 1200px) {
+  .product {
+    display: flex;
     flex-direction: column;
   }
   .mainimg {
     width: 100%;
   }
-  .subimages{
+  .subimages {
     flex-wrap: wrap;
   }
-  .subimages img{
+  .subimages img {
     margin-bottom: 10px;
   }
-  .productmain{
+  .productmain {
     padding-top: 100px;
   }
 }

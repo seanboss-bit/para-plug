@@ -9,12 +9,13 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
   const [navScroll, setNavScroll] = useState(false);
   const route = usePathname();
-
+  const products = useSelector((state) => state.cart.products);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY >= 50) {
@@ -51,18 +52,33 @@ const Navbar = () => {
                 >
                   store
                 </Link>
-                <Link href="/refund" className={route === "/refund" ? styles.active : null}>Refund Policy</Link>
-                <Link href="/contact" className={route === "/contact" ? styles.active : null}>Customer Care</Link>
-                <Link href="/about" className={route === "/about" ? styles.active : null}>About Us</Link>
+                <Link
+                  href="/refund"
+                  className={route === "/refund" ? styles.active : null}
+                >
+                  Refund Policy
+                </Link>
+                <Link
+                  href="/contact"
+                  className={route === "/contact" ? styles.active : null}
+                >
+                  Customer Care
+                </Link>
+                <Link
+                  href="/about"
+                  className={route === "/about" ? styles.active : null}
+                >
+                  About Us
+                </Link>
               </div>
               <Link href="/cart" className={styles.shopping}>
                 <ShoppingCartIcon />
-                <span>1</span>
+                {products.length > 0 ? <span>{products.length}</span> : null}
               </Link>
             </div>
             <Link href="/cart" className={styles.shop}>
               <ShoppingCartIcon />
-              <span>1</span>
+              {products.length > 0 ? <span>{products.length}</span> : null}
             </Link>
           </div>
         </div>

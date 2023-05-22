@@ -155,10 +155,28 @@
 .empty svg {
   height: 20px;
 }
-.empty a{
+.empty a {
   color: #a4a4a4;
   text-decoration: none;
 }
+.whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  height: 60px;
+  width: 60px;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.whatsapp a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+}
+
 @media screen and (max-width: 768px) {
   .cartsummary {
     flex-direction: column-reverse;

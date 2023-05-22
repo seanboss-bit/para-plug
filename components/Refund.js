@@ -22,8 +22,7 @@ const Refund = () => {
             </div>
             <div className={styles.addressbox}>
               <h6>phone:</h6>
-              <p>No 1 Jaba shopping complex, panisau road, Kano state.</p>
-              <p>Federal secretariat along Airport road.</p>
+              <p>+ 234 812 9198 327</p>
             </div>
             <div className={styles.socials}>
               <a href="#">

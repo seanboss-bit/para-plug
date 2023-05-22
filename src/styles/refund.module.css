@@ -81,6 +81,17 @@
 .write svg {
   height: 20px;
 }
+.socials a {
+  background: #0084d6;
+  color: #fff;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
 @media screen and (max-width: 768px) {
   .address {
     border: none;

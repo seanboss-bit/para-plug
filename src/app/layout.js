@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Providers } from "../redux/provider";
+import Whatsapp from "../../components/Whatsapp";
 
 export const metadata = {
   title: "ParaPlug Store - Online Sneakers Store",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Providers>{children}</Providers>
+        <Whatsapp />
       </body>
     </html>
   );

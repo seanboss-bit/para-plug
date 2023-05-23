@@ -20,7 +20,9 @@ const CartBody = () => {
   const products = useSelector((state) => state.cart.products);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   const remove = (item) => {
     dispatch(removeFromCart(item));
   };
@@ -47,16 +49,18 @@ const CartBody = () => {
             </div>
             <div className="cartitems">
               {products.map((product) => (
-                <div className={styles.cartItem}>
+                <div className={styles.cartItem} key={product._id}>
                   <div className={styles.cartproduct}>
-                    <img src={product.img} alt="#" />
+                    <img src={product.image} alt="#" />
                     <div>
                       <h3>{product.name}</h3>
                       <p>{product.category}</p>
                       <button onClick={() => remove(product)}>remove</button>
                     </div>
                   </div>
-                  <div className={styles.cartprice}>$ {product.price}</div>
+                  <div className={styles.cartprice}>
+                    NGN {numberWithCommas(product.price)}
+                  </div>
                   <div className={styles.res}>
                     <div className={styles.cartquantity}>
                       <button onClick={() => decrease(product)}>
@@ -69,7 +73,7 @@ const CartBody = () => {
                     </div>
                   </div>
                   <div className={styles.carttotal}>
-                    $ {product.cartQuantity * product.price}
+                    NGN {numberWithCommas(product.cartQuantity * product.price)}
                   </div>
                 </div>
               ))}
@@ -84,15 +88,19 @@ const CartBody = () => {
               <div className={styles.cartcheckout}>
                 <div className={styles.subtotal}>
                   <span>subtotal</span>
-                  <span className={styles.amount}>$ {cart.total}</span>
+                  <span className={styles.amount}>
+                    NGN {numberWithCommas(cart.total)}
+                  </span>
                 </div>
                 <div className={styles.subtotal}>
                   <span>shipping</span>
-                  <span className={styles.amount}>$500</span>
+                  <span className={styles.amount}>NGN 500</span>
                 </div>
                 <div className={styles.subtotal}>
                   <span>total</span>
-                  <span className={styles.amount}>$ {cart.total + 500}</span>
+                  <span className={styles.amount}>
+                    NGN {numberWithCommas(cart.total + 500)}
+                  </span>
                 </div>
                 <button>checkout</button>
                 <Link href={"/store"}>

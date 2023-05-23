@@ -3,23 +3,31 @@ import Image from "next/image";
 import styles from "../src/styles/product.module.css";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { products } from "../data";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../src/redux/features/cartReducer";
+import { publicRequest } from "../requests";
 
 const Product = () => {
   const id = useParams();
   const dispatch = useDispatch();
-  let item = products?.find((one) => {
-    if (Number(id.id) === one.id) {
-      return one;
-    }
-  });
+  const [singleItem, setSingleItem] = useState();
 
-  const [bigimg, setBigImg] = useState(item.img);
+  const getItem = async () => {
+    try {
+      const res = await publicRequest.get("product/find/" + id.id);
+      setSingleItem(res.data.product);
+    } catch (error) {
+      console.log(error)
+    }
+  };
+  useEffect(() => {
+    getItem();
+  }, [id.id]);
+
+  const [bigimg, setBigImg] = useState(singleItem?.extraImg[0]);
 
   const activePic = (i) => {
-    setBigImg(item.extraImg[i]);
+    setBigImg(singleItem?.extraImg[i]);
   };
 
   const add = (product) => {
@@ -31,9 +39,13 @@ const Product = () => {
       <div className="container">
         <div className={styles.product}>
           <div className={styles.productimages}>
-            <img src={bigimg} alt="#" className={styles.mainimg} />
+            <img
+              src={bigimg === undefined ? singleItem?.image : bigimg}
+              alt="#"
+              className={styles.mainimg}
+            />
             <div className={styles.subimages}>
-              {item.extraImg.map((img, i) => (
+              {singleItem?.extraImg.map((img, i) => (
                 <Image
                   key={i}
                   width={100}
@@ -42,7 +54,9 @@ const Product = () => {
                   alt="#"
                   objectFit="contain"
                   onClick={() => activePic(i)}
-                  className={item.extraImg[i] === bigimg ? styles.active : null}
+                  className={
+                    singleItem?.extraImg[i] === bigimg ? styles.active : null
+                  }
                 />
               ))}
             </div>
@@ -50,14 +64,16 @@ const Product = () => {
           <div className={styles.info}>
             <div>
               <span className={styles.location}>
-                home / {item.category} / {item.name}
+                home / {singleItem?.category} / {singleItem?.name}
               </span>
-              <p className={styles.cat}>{item.category}</p>
-              <h3 className={styles.infoname}>{item.name}</h3>
+              <p className={styles.cat}>{singleItem?.category}</p>
+              <h3 className={styles.infoname}>{singleItem?.name}</h3>
               <p className={styles.pl}>
-                {item.slashPrice ? <span>$ {item.slashPrice}</span> : null}
-                <p>$ {item.price}</p>
-                {item.freeShipping ? <span>+ free shipping</span> : null}
+                {singleItem?.slashPrice ? (
+                  <span>$ {singleItem?.slashPrice}</span>
+                ) : null}
+                <p>$ {singleItem?.price}</p>
+                {singleItem?.freeShipping ? <span>+ free shipping</span> : null}
               </p>
             </div>
             <div>
@@ -65,12 +81,12 @@ const Product = () => {
                 {/* <input type="number" placeholder={1} defaultValue={1} /> */}
                 <select>
                   <option>size</option>
-                  {item.sizes.map((size, i) => (
+                  {singleItem?.sizes.map((size, i) => (
                     <option key={i}> {size}</option>
                   ))}
                 </select>
               </div>
-              <button className={styles.btn} onClick={() => add(item)}>
+              <button className={styles.btn} onClick={() => add(singleItem)}>
                 add to cart
               </button>
             </div>

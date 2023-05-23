@@ -15,7 +15,7 @@ const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
   const [navScroll, setNavScroll] = useState(false);
   const route = usePathname();
-  const products = useSelector((state) => state.cart.products);
+  const products = useSelector((state) => state.cart?.products);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY >= 50) {
@@ -73,12 +73,12 @@ const Navbar = () => {
               </div>
               <Link href="/cart" className={styles.shopping}>
                 <ShoppingCartIcon />
-                {products.length > 0 ? <span>{products.length}</span> : null}
+                {products?.length > 0 ? <span>{products.length}</span> : null}
               </Link>
             </div>
             <Link href="/cart" className={styles.shop}>
               <ShoppingCartIcon />
-              {products.length > 0 ? <span>{products.length}</span> : null}
+              {products?.length > 0 ? <span>{products.length}</span> : null}
             </Link>
           </div>
         </div>

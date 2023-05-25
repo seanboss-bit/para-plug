@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { searchShoe } from "@/redux/features/shoeReducer";
 
-const StoreBody = ({ products }) => {
+const StoreBody = () => {
   const shoes = useSelector((state) => state.shoe.shoes);
 
   const [showShoe, setShowShoe] = useState(shoes);
@@ -23,9 +23,13 @@ const StoreBody = ({ products }) => {
     if (category === "all") {
       setShowShoe(shoes);
     } else if (category === "nikes") {
-      setShowShoe(shoes.filter((item) => item.category === "nike"));
+      setShowShoe((prev) =>
+        [...prev].filter((item) => item.category === "nike")
+      );
     } else {
-      setShowShoe(shoes.filter((item) => item.category === "jordan"));
+      setShowShoe((prev) =>
+        [...prev].filter((item) => item.category === "jordan")
+      );
     }
   }, [category, searchValue]);
 

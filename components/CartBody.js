@@ -5,6 +5,7 @@ import {
   MinusIcon,
   PlusIcon,
   ArrowLongLeftIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -14,7 +15,9 @@ import {
   clear,
   getCartTotal,
 } from "@/redux/features/cartReducer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { publicRequest } from "../requests";
 
 const CartBody = () => {
   const products = useSelector((state) => state.cart.products);
@@ -23,6 +26,12 @@ const CartBody = () => {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+
+  const [payment, setPayment] = useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const remove = (item) => {
     dispatch(removeFromCart(item));
   };
@@ -31,6 +40,25 @@ const CartBody = () => {
   };
   const decrease = (item) => {
     dispatch(removeProductQuantity(item));
+  };
+
+  const makeOrder = async () => {
+    if (name === "" || address === "" || phone === "" || email === "") {
+      toast.error("Please All Information is Required");
+    } else {
+      const res = await publicRequest.post("/order", {
+        name: name,
+        orders: products,
+        email,
+        address,
+        phone,
+      });
+      toast.success(res.data.message);
+      dispatch(clear());
+      setPayment(0);
+
+      console.log(products);
+    }
   };
   useEffect(() => {
     dispatch(getCartTotal());
@@ -102,7 +130,7 @@ const CartBody = () => {
                     NGN {numberWithCommas(cart.total + 500)}
                   </span>
                 </div>
-                <button>checkout</button>
+                <button onClick={() => setPayment(1)}>checkout</button>
                 <Link href={"/store"}>
                   <ArrowLongLeftIcon /> continue shopping
                 </Link>
@@ -115,6 +143,65 @@ const CartBody = () => {
             <Link href={"/store"}>
               <ArrowLongLeftIcon /> start shopping
             </Link>
+          </div>
+        )}
+        {payment === 0 ? null : (
+          <div className={styles.accdetailscontainer}>
+            <div className={styles.accdetailsbody}>
+              <div className={styles.closebtn}>
+                <XMarkIcon onClick={() => setPayment(0)} />
+              </div>
+              <span className={styles.accwarning}>
+                please after payment make sure you send your payment receipt to
+                the whatsapp number just click on the whatsapp icon below
+              </span>
+              <span className={styles.accwarning}>payment validates order</span>
+              <span className={styles.pay}>
+                you are about to pay {numberWithCommas(cart.total + 500)}
+              </span>
+              <div className={styles.accdetails}>
+                <div>
+                  <p>account name:</p>
+                  <span>para plug</span>
+                </div>
+                <div>
+                  <p>bank:</p>
+                  <span>shalaye para bank</span>
+                </div>
+                <div>
+                  <p>account number:</p>
+                  <span>para001</span>
+                </div>
+              </div>
+              <form className={styles.userdata}>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Enter Name Used In Making Transfer"
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                  <input
+                    type="email"
+                    placeholder="Enter Your Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="Enter Phone Number"
+                    onChange={(e) => setPhone(e.target.value)}
+                  />
+                  <textarea
+                    placeholder="Enter Your Address"
+                    onChange={(e) => setAddress(e.target.value)}
+                  />
+                </div>
+              </form>
+              <button className={styles.done} onClick={() => makeOrder()}>
+                order kicks now
+              </button>
+            </div>
           </div>
         )}
       </div>

@@ -1,5 +1,6 @@
 "use client";
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
   products: [],
@@ -17,9 +18,11 @@ const cartSlice = createSlice({
       );
       if (itemIndex >= 0) {
         state.products[itemIndex].cartQuantity += 1;
+        toast.info('Item Quantity Added')
       } else {
         const tempProduct = { ...action.payload, cartQuantity: 1 };
         state.products.push(tempProduct);
+        toast.success('Item Added To Cart Successfully')
       }
     },
     removeFromCart: (state, action) => {
@@ -27,6 +30,7 @@ const cartSlice = createSlice({
         (cartItem) => cartItem._id !== action.payload._id
       );
       state.products = newCartItems;
+      toast.error('Item Removed Successfully')
     },
     removeProductQuantity: (state, action) => {
       const itemIndex = state.products.findIndex(
@@ -48,6 +52,7 @@ const cartSlice = createSlice({
       state.products = [];
       state.quantity = 0;
       state.total = 0;
+      toast.info('Cart Cleared')
     },
     getCartTotal: (state) => {
       let { total, quantity } = state.products.reduce(

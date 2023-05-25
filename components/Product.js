@@ -6,18 +6,20 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../src/redux/features/cartReducer";
 import { publicRequest } from "../requests";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const id = useParams();
   const dispatch = useDispatch();
   const [singleItem, setSingleItem] = useState();
+  const [size, setSize] = useState("size");
 
   const getItem = async () => {
     try {
       const res = await publicRequest.get("product/find/" + id.id);
       setSingleItem(res.data.product);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
   useEffect(() => {
@@ -31,7 +33,12 @@ const Product = () => {
   };
 
   const add = (product) => {
-    dispatch(addProduct(product));
+    if (size === "size") {
+      toast.error("Please Select Your Kicks Size");
+    } else {
+      dispatch(addProduct({ ...product, size }));
+      
+    }
   };
 
   return (
@@ -79,10 +86,13 @@ const Product = () => {
             <div>
               <div className={styles.options}>
                 {/* <input type="number" placeholder={1} defaultValue={1} /> */}
-                <select>
-                  <option>size</option>
+                <select onChange={(e) => setSize(e.target.value)}>
+                  <option value={"size"}>size</option>
                   {singleItem?.sizes.map((size, i) => (
-                    <option key={i}> {size}</option>
+                    <option key={i} value={size}>
+                      {" "}
+                      {size}
+                    </option>
                   ))}
                 </select>
               </div>

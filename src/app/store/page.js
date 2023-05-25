@@ -7,13 +7,7 @@ import { publicRequest } from "../../../requests";
 import { useDispatch } from "react-redux";
 import { addShoe } from "@/redux/features/shoeReducer";
 
-export const metadata = {
-  icons: {
-    icon: "/para.png",
-    shortcut: "/para.png",
-    apple: "/para.png",
-  },
-};
+
 
 const page = () => {
   const [products, setProducts] = useState([]);

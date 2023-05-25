@@ -5,13 +5,7 @@ import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import { useParams } from "next/navigation";
 import { publicRequest } from "../../../../requests";
 import { useEffect, useState } from "react";
-export const metadata = {
-  icons: {
-    icon: "/para.png",
-    shortcut: "/para.png",
-    apple: "/para.png",
-  },
-};
+
 
 const page = () => {
   const id = useParams();

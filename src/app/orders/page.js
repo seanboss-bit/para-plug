@@ -3,13 +3,7 @@ import Link from "next/link";
 import styles from "../../styles/order.module.css";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../../../requests";
-export const metadata = {
-  icons: {
-    icon: "/para.png",
-    shortcut: "/para.png",
-    apple: "/para.png",
-  },
-};
+
 
 const page = () => {
   const [allOrders, setAllOrders] = useState([]);

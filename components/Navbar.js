@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className={styles.navinner}>
           <Link href="/">
             <Image
-              src="https://paraplug.org/wp-content/uploads/2023/02/PARA_BLACK-03.png"
+              src="/para2.png"
               alt="#"
               width={100}
               height={100}

@@ -25,7 +25,11 @@ const Refund = () => {
               <p>+ 234 812 9198 327</p>
             </div>
             <div className={styles.socials}>
-              <a href="#">
+              <a
+                href="https://www.instagram.com/p/CsYyBmvB99_/?igshid=NTc4MTIwNjQ2YQ=="
+                rel="noreferrer"
+                target="_blank"
+              >
                 {" "}
                 <i className="fa-brands fa-instagram"></i>
               </a>

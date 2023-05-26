@@ -9,10 +9,10 @@
   margin-bottom: 30px;
 }
 .mainimg {
-  width: 600px;
+  width: 100%;
   object-fit: contain;
   margin-bottom: 20px;
-  height: 500px;
+  height: 300px;
 }
 .info {
   display: flex;

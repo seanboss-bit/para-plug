@@ -1,5 +1,4 @@
 import Category from "../../components/Category";
-import Features from "../../components/Features";
 import Footer from "../../components/Footer";
 import Logos from "../../components/Logos";
 import Navbar from "../../components/Navbar";
@@ -23,7 +22,6 @@ export default function Home() {
       <Logos />
       <Category />
       <Recomended />
-      {/* <Features /> */}
       <NewsLetter />
       <Footer />
     </>

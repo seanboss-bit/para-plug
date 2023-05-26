@@ -10,7 +10,6 @@ const Recomended = () => {
   const getRandom = async () => {
     try {
       const res = await publicRequest.get("/product");
-      console.log(res);
       setKicks(res.data.allKicks.sort(() => Math.random() - Math.random()).slice(0, 6));
     } catch (error) {
       console.log(error);

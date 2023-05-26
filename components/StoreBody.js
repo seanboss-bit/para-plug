@@ -4,7 +4,6 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Result from "./Result";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { searchShoe } from "@/redux/features/shoeReducer";
 
 const StoreBody = () => {
   const shoes = useSelector((state) => state.shoe.shoes);
@@ -17,19 +16,14 @@ const StoreBody = () => {
 
   const [searchValue, setSearchValue] = useState("");
 
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (category === "all") {
       setShowShoe(shoes);
     } else if (category === "nikes") {
-      setShowShoe((prev) =>
-        [...prev].filter((item) => item.category === "nike")
-      );
+      setShowShoe(shoes.filter((item) => item.category === "nike"));
     } else {
-      setShowShoe((prev) =>
-        [...prev].filter((item) => item.category === "jordan")
-      );
+      setShowShoe(shoes.filter((item) => item.category === "jordan"));
     }
   }, [category, searchValue]);
 
@@ -44,6 +38,10 @@ const StoreBody = () => {
       setShowShoe((prev) => [...prev].sort((a, b) => b.price - a.price));
     }
   }, [latest, searchValue]);
+
+  const search = () => {
+    
+  }
 
   return (
     <div className={styles.store}>

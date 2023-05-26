@@ -5,7 +5,11 @@ import Whatsapp from "../../components/Whatsapp";
 export const metadata = {
   title: "ParaPlug Store - Online Sneakers Store",
   description: "Para Plug",
- 
+  icons: {
+    icon: "/para.png",
+    shortcut: "/para.png",
+    apple: "/para.png",
+  },
 };
 
 export default function RootLayout({ children }) {

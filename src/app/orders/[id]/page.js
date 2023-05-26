@@ -5,16 +5,40 @@ import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import { useParams } from "next/navigation";
 import { publicRequest } from "../../../../requests";
 import { useEffect, useState } from "react";
-
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const page = () => {
   const id = useParams();
   const [order, setOrder] = useState({});
+  const router = useRouter();
   const getOrder = async () => {
     try {
       const res = await publicRequest.get("/order/find/" + id.id);
       setOrder(res.data.product);
       console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const updateOrder = async () => {
+    try {
+      const res = await publicRequest.put("/order/" + id.id, {
+        completed: true,
+      });
+      toast.success(res.data.message);
+      router.push("/orders");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteOrder = async () => {
+    try {
+      const res = await publicRequest.delete("/order/" + id.id);
+      toast.success(res.data.message);
+      router.push("/orders");
     } catch (error) {
       console.log(error);
     }
@@ -32,8 +56,8 @@ const page = () => {
             <ArrowUturnLeftIcon />
           </Link>
           <div>
-            <button>completed</button>
-            <button>delete</button>
+            <button onClick={() => updateOrder()}>completed</button>
+            <button onClick={() => deleteOrder()}>delete</button>
           </div>
         </div>
         <div className={styles.middle}>

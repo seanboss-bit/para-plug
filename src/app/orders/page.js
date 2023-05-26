@@ -4,14 +4,15 @@ import styles from "../../styles/order.module.css";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../../../requests";
 
-
 const page = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   const getOrders = async () => {
     try {
       const res = await publicRequest.get("/order");
-      setAllOrders(res.data.allOrders);
+      setAllOrders(
+        res.data.allOrders.sort((a, b) => a.createdAt - b.createdAt)
+      );
     } catch (error) {
       console.log(error);
     }
@@ -37,7 +38,11 @@ const page = () => {
               </div>
               <div className={styles.orderend}>
                 {order.completed ? null : <div className={styles.dot}></div>}
-                {order.completed ? <p>order completed</p> : <p>order not completed</p>}
+                {order.completed ? (
+                  <p>order completed</p>
+                ) : (
+                  <p>order not completed</p>
+                )}
               </div>
             </Link>
           ))}

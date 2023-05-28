@@ -1,5 +1,5 @@
 .mainnav {
-  position: -webkit-sticky;
+  position: sticky;
   left: 0;
   right: 0;
   top: 0%;
@@ -81,14 +81,19 @@
 }
 @media screen and (max-width: 1200px) {
   .mainnav {
-    position: fixed;
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0%;
     width: 100%;
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     z-index: 98;
     transition: 0.3s;
+    background: transparent;
   }
   .mainnav2 {
     position: fixed;
+    top: 0;
     width: 100%;
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     z-index: 98;

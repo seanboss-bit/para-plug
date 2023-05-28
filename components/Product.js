@@ -1,7 +1,10 @@
 import Image from "next/image";
 import styles from "../src/styles/product.module.css";
 
-const Product = ({ singleItem, bigimg , add, activePic}) => {
+const Product = ({ singleItem, bigimg, add, activePic, setSize }) => {
+  function numberWithCommas(x) {
+    return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   return (
     <div className={styles.productmain}>
       <div className="container">
@@ -38,9 +41,9 @@ const Product = ({ singleItem, bigimg , add, activePic}) => {
               <h3 className={styles.infoname}>{singleItem?.name}</h3>
               <p className={styles.pl}>
                 {singleItem?.slashPrice ? (
-                  <span>$ {singleItem?.slashPrice}</span>
+                  <span>NGN {numberWithCommas(singleItem?.slashPrice)}</span>
                 ) : null}
-                <p>$ {singleItem?.price}</p>
+                <p>NGN {numberWithCommas(singleItem?.price)}</p>
                 {singleItem?.freeShipping ? <span>+ free shipping</span> : null}
               </p>
             </div>

@@ -1,3 +1,4 @@
+import Banner from "../../components/Banner";
 import Category from "../../components/Category";
 import Footer from "../../components/Footer";
 import Logos from "../../components/Logos";
@@ -17,13 +18,16 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Showcase />
-      <Logos />
-      <Category />
-      <Recomended />
-      <NewsLetter />
-      <Footer />
+      <Banner />
+      <>
+        <Navbar />
+        <Showcase />
+        <Logos />
+        <Category />
+        <Recomended />
+        <NewsLetter />
+        <Footer />
+      </>
     </>
   );
 }

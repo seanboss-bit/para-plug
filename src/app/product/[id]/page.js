@@ -45,7 +45,7 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <Product  singleItem={singleItem} bigimg={bigimg} add={add} activePic={activePic}/>
+      <Product  singleItem={singleItem} bigimg={bigimg} add={add} activePic={activePic} setSize={setSize}/>
       <Footer />
     </>
   );

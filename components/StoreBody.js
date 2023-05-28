@@ -16,7 +16,6 @@ const StoreBody = () => {
 
   const [searchValue, setSearchValue] = useState("");
 
-
   useEffect(() => {
     if (category === "all") {
       setShowShoe(shoes);
@@ -40,8 +39,18 @@ const StoreBody = () => {
   }, [latest, searchValue]);
 
   const search = () => {
-    
-  }
+    setShowShoe(
+      shoes.filter((item) => {
+        if (searchValue === "") {
+          return item;
+        } else if (
+          item.name.toLowerCase().includes(searchValue.toLocaleLowerCase())
+        ) {
+          return item;
+        }
+      })
+    );
+  };
 
   return (
     <div className={styles.store}>
@@ -54,12 +63,12 @@ const StoreBody = () => {
                 placeholder="Search Here...."
                 onChange={(e) => setSearchValue(e.target.value)}
               />
-              {/* <button onClick={() => dispatch(searchShoe(searchValue))}>
-                <MagnifyingGlassIcon />
-              </button> */}
-              <button>
+              <button onClick={() => search()}>
                 <MagnifyingGlassIcon />
               </button>
+              {/* <button>
+                <MagnifyingGlassIcon />
+              </button> */}
             </div>
             <div className={styles.cat}>
               <select onChange={(e) => setLatest(e.target.value)}>

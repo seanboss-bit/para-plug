@@ -5,7 +5,7 @@
   justify-content: space-around;
 }
 .productmain {
-  padding-top: 120px;
+  padding-top: 20px;
   margin-bottom: 30px;
 }
 .mainimg {
@@ -78,7 +78,8 @@
 .subimages {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .subimages img {
   object-fit: contain;

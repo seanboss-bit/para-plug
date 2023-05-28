@@ -16,7 +16,7 @@ const Category = () => {
                 sure to be a popular choice among sneaker enthusiasts and
                 collectors alike
               </p>
-              <a href="/shop">shop now</a>
+              <a href="/store">shop now</a>
             </div>
           </div>
           <div className={styles.secondslide}>
@@ -28,7 +28,7 @@ const Category = () => {
                 modern style. the perfect finish, making you feel grounded and
                 confident with every step.
               </p>
-              <a href="/shop">shop now</a>
+              <a href="/store">shop now</a>
             </div>
           </div>
           <div className={styles.thirdslide}>
@@ -42,7 +42,7 @@ const Category = () => {
                 Fragment Design, and Travis Scott, this shoe is a unique and
                 must-have addition to any sneaker collection."
               </p>
-              <a href="/shop">checkout</a>
+              <a href="/store">shop now</a>
             </div>
           </div>
         </div>

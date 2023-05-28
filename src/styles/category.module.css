@@ -8,7 +8,7 @@
   text-transform: capitalize;
 }
 .firstslide {
-  background: url("https://paraplug.org/wp-content/uploads/2023/02/pexels-varun-dubey-9778521-scaled.jpg");
+  background: url("../../public/jordan.jpg");
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,7 +21,7 @@
 .firstslide::before {
   content: "";
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.5;
   background: #000;
   top: 0;
   left: 0;
@@ -29,7 +29,7 @@
   height: 100%;
 }
 .secondslide {
-  background: url("https://paraplug.org/wp-content/uploads/2023/02/christian-lucas-vraH9m7hfHU-unsplash-scaled.jpg");
+  background: url("../../public/nikesb.jpg");
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,7 +42,7 @@
 .secondslide::before {
   content: "";
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.5;
   background: #000;
   top: 0;
   left: 0;
@@ -50,7 +50,7 @@
   height: 100%;
 }
 .thirdslide {
-  background: url("https://paraplug.org/wp-content/uploads/2023/02/pexels-aman-jakhar-2048548-scaled.jpg");
+  background: url("../../public/travis.jpg");
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -63,7 +63,7 @@
 .thirdslide::before {
   content: "";
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.5;
   background: #000;
   top: 0;
   left: 0;
@@ -75,6 +75,8 @@
 }
 .content p {
   margin-bottom: 40px;
+  font-size: 14px;
+  text-align:  justify;
 }
 .content a {
   text-decoration: none;

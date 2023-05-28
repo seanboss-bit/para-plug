@@ -1,10 +1,47 @@
+"use client";
 import Image from "next/image";
 import styles from "../src/styles/product.module.css";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { addProduct } from "@/redux/features/cartReducer";
+import { publicRequest } from "../requests";
 
-const Product = ({ singleItem, bigimg, add, activePic, setSize }) => {
+const Product = () => {
   function numberWithCommas(x) {
     return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  const id = useParams();
+  const dispatch = useDispatch();
+  const [singleItem, setSingleItem] = useState();
+  const [size, setSize] = useState("size");
+
+  const getItem = async () => {
+    try {
+      const res = await publicRequest.get(`product/find/${id.id}`);
+      setSingleItem(res.data.product);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getItem();
+  }, [id.id]);
+
+  const [bigimg, setBigImg] = useState(singleItem?.extraImg[0]);
+
+  const activePic = (i) => {
+    setBigImg(singleItem?.extraImg[i]);
+  };
+
+  const add = (product) => {
+    if (size === "size") {
+      toast.error("Please Select Your Kicks Size");
+    } else {
+      dispatch(addProduct({ ...product, size }));
+    }
+  };
   return (
     <div className={styles.productmain}>
       <div className="container">

@@ -19,7 +19,7 @@ const Product = () => {
 
   const getItem = async () => {
     try {
-      const res = await publicRequest.get(`product/find/${id.id}`);
+      const res = await publicRequest.get(`/product/find/${id.id}`);
       setSingleItem(res.data.product);
     } catch (error) {
       console.log(error);

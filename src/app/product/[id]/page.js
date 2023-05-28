@@ -18,7 +18,7 @@ const page = () => {
 
   const getItem = async () => {
     try {
-      const res = await publicRequest.get("product/find/" + id.id);
+      const res = await publicRequest.get(`product/find/${id.id}`);
       setSingleItem(res.data.product);
     } catch (error) {
       console.log(error);
@@ -39,13 +39,18 @@ const page = () => {
       toast.error("Please Select Your Kicks Size");
     } else {
       dispatch(addProduct({ ...product, size }));
-      
     }
   };
   return (
     <>
       <Navbar />
-      <Product  singleItem={singleItem} bigimg={bigimg} add={add} activePic={activePic} setSize={setSize}/>
+      <Product
+        singleItem={singleItem}
+        bigimg={bigimg}
+        add={add}
+        activePic={activePic}
+        setSize={setSize}
+      />
       <Footer />
     </>
   );

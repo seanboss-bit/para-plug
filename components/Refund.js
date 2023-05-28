@@ -26,12 +26,28 @@ const Refund = () => {
             </div>
             <div className={styles.socials}>
               <a
-                href="https://www.instagram.com/p/CsYyBmvB99_/?igshid=NTc4MTIwNjQ2YQ=="
+                href="https://www.instagram.com/para_plug"
                 rel="noreferrer"
                 target="_blank"
               >
                 {" "}
                 <i className="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.twitter.com/para_plug"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {" "}
+                <i className="fa-brands fa-twitter"></i>
+              </a>
+              <a
+                href="https://www.snapchat.com/add/para_plug"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {" "}
+                <i className="fa-brands fa-snapchat"></i>
               </a>
             </div>
           </div>

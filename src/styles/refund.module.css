@@ -81,6 +81,12 @@
 .write svg {
   height: 20px;
 }
+.socials{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 .socials a {
   background: #0084d6;
   color: #fff;

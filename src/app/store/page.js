@@ -24,7 +24,7 @@ const page = () => {
   };
   useEffect(() => {
     getAllShoes();
-  }, [products]);
+  }, []);
   return (
     <div>
       <Navbar />

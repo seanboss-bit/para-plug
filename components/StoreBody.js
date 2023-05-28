@@ -2,7 +2,7 @@
 import styles from "../src/styles/store.module.css";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Result from "./Result";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
 const StoreBody = () => {
@@ -66,9 +66,6 @@ const StoreBody = () => {
               <button onClick={() => search()}>
                 <MagnifyingGlassIcon />
               </button>
-              {/* <button>
-                <MagnifyingGlassIcon />
-              </button> */}
             </div>
             <div className={styles.cat}>
               <select onChange={(e) => setLatest(e.target.value)}>
@@ -91,13 +88,13 @@ const StoreBody = () => {
         <div className={styles.results}>
           {showShoe.map((product) => (
             <Result
-              img={product.image}
-              name={product.name}
-              cat={product.category}
-              price={product.price}
-              slash={product.slashPrice}
-              id={product._id}
-              key={product._id}
+              img={product?.image}
+              name={product?.name}
+              cat={product?.category}
+              price={product?.price}
+              slash={product?.slashPrice}
+              id={product?._id}
+              key={product?._id}
             />
           ))}
         </div>

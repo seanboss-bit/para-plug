@@ -26,7 +26,7 @@ const Product = () => {
     }
   };
   useEffect(() => {
-    getItem();
+    // getItem();
   }, [id.id]);
 
   const [bigimg, setBigImg] = useState(singleItem?.extraImg[0]);

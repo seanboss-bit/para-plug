@@ -83,6 +83,7 @@ const Product = () => {
                 <p>NGN {numberWithCommas(singleItem?.price)}</p>
                 {singleItem?.freeShipping ? <span>+ free shipping</span> : null}
               </p>
+              <p className={styles.desc}>{singleItem?.description}</p>
             </div>
             <div>
               <div className={styles.options}>

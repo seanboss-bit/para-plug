@@ -18,7 +18,7 @@ const Navbar = () => {
   const products = useSelector((state) => state.cart?.products);
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY >= 90) {
+      if (window.scrollY >= 110) {
         setNavScroll(true);
       } else {
         setNavScroll(false);

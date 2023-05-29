@@ -8,13 +8,11 @@ import { toast } from "react-toastify";
 const page = () => {
   const [name, setName] = useState("");
   const [mainImg, setMainImg] = useState([]);
-  const [mainImgLink, setMainImgLink] = useState("");
   const [price, setPrice] = useState("");
   const [slashPrice, setSlashPrice] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [extraImg, setExtraImg] = useState([]);
-  const [extraImgLinks, setExtraImgLinks] = useState([]);
   const [freeShipping, setFreeShipping] = useState(false);
   const [inStock, setInStock] = useState(true);
   const [size, setSize] = useState([]);
@@ -33,38 +31,25 @@ const page = () => {
 
   const handleSingleUpload = async () => {
     try {
-      const data = await uploadMultiple(mainImg[0]);
-      setMainImgLink(data.url);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const handleUpload = async () => {
-    try {
       let arr = [];
+      const data = await uploadMultiple(mainImg[0]);
       for (let i = 0; i < extraImg.length; i++) {
         const data = await uploadMultiple(extraImg[i]);
         arr.push(data);
       }
-      setExtraImgLinks(arr.map((item) => item.url));
-      handleSingleUpload();
-      try {
-        const res = await publicRequest.post("/product", {
-          name: name,
-          image: mainImgLink,
-          price: price,
-          category: category,
-          description: description,
-          extraImg: extraImgLinks,
-          sizes: size,
-          freeShipping: freeShipping,
-          inStock: inStock,
-          slashPrice: slashPrice,
-        });
-        toast.success(res.data.message);
-      } catch (error) {
-        console.log(error);
-      }
+      const res = await publicRequest.post("/product", {
+        name: name,
+        image: data.url,
+        category: category,
+        price: price,
+        slashPrice: slashPrice,
+        description: description,
+        sizes: size,
+        freeShipping: freeShipping,
+        extraImg: arr.map((item) => item.url),
+        inStock: inStock,
+      });
+      toast.success(res.data.message);
     } catch (error) {
       console.log(error);
     }
@@ -153,7 +138,12 @@ const page = () => {
             <label>in stock*</label>
           </div>
         </form>
-        <button className={styles.btn} onClick={() => handleUpload()}>
+        <button
+          className={styles.btn}
+          onClick={async () => {
+            await handleSingleUpload();
+          }}
+        >
           add new kick
         </button>
       </div>

@@ -1,11 +1,12 @@
+import Link from "next/link";
 import styles from "../src/styles/cart.module.css";
 
 const Whatsapp = () => {
   return (
     <div className={styles.whatsapp}>
-      <a href="#">
+      <Link target="_blank" href={"https://wa.me/23408058538362"}   rel="noreferrer">
         <i className="fa-brands fa-whatsapp"></i>
-      </a>
+      </Link>
     </div>
   );
 };

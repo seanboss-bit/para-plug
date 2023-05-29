@@ -1,0 +1,68 @@
+.heading {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 30px 0px;
+  font-weight: 600;
+}
+.addkick div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.addkick {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.addkick label {
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.addkick select {
+  text-transform: capitalize;
+  padding: 8px 10px;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #0084d6;
+}
+.addkick input {
+  padding: 8px 10px;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #0084d6;
+}
+.addkick input:focus ~ label {
+  color: #0084d6;
+}
+.addkick textarea {
+  padding: 8px 10px;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #0084d6;
+}
+.btn{
+    width: 100%;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    background: #0084d6;
+    color: #fff;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: #25acff;
+    transition: .3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .addkick {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0px 15px;
+  }
+}

@@ -162,15 +162,15 @@ const CartBody = () => {
               <div className={styles.accdetails}>
                 <div>
                   <p>account name:</p>
-                  <span>para plug</span>
+                  <span>nurudeen ibrahim opeyemi</span>
                 </div>
                 <div>
                   <p>bank:</p>
-                  <span>shalaye para bank</span>
+                  <span>united bank of africa (UBA)</span>
                 </div>
                 <div>
                   <p>account number:</p>
-                  <span>para001</span>
+                  <span>2236242867</span>
                 </div>
               </div>
               <form className={styles.userdata}>

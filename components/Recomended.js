@@ -10,7 +10,12 @@ const Recomended = () => {
   const getRandom = async () => {
     try {
       const res = await publicRequest.get("/product");
-      setKicks(res.data.allKicks.sort(() => Math.random() - Math.random()).slice(0, 6));
+      let lastSale = res.data.allKicks.filter((item) => {
+        if (item.slashPrice) {
+          return item;
+        }
+      });
+      setKicks(lastSale.sort(() => Math.random() - Math.random()).slice(0, 6));
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +32,7 @@ const Recomended = () => {
         </h3>
         <div className={styles.recommend}>
           {kicks.map((kick) => (
-            <RecCard key={kick._id} kick={kick}/>
+            <RecCard key={kick._id} kick={kick} />
           ))}
         </div>
       </div>

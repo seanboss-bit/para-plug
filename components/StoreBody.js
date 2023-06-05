@@ -2,13 +2,32 @@
 import styles from "../src/styles/store.module.css";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Result from "./Result";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { publicRequest } from "../requests";
+import Loading from "./Loading";
 
 const StoreBody = () => {
+  const [loading, setLoading] = useState(false);
   const shoes = useSelector((state) => state.shoe.shoes);
+  const [showShoe, setShowShoe] = useState([]);
+  const dispatch = useDispatch();
 
-  const [showShoe, setShowShoe] = useState(shoes);
+  const getAllShoes = async () => {
+    try {
+      const res = await publicRequest.get("/product");
+      setShowShoe(res.data.allKicks);
+      if (res.data) {
+        setLoading(false);
+      }
+      dispatch(addShoe(res.data.allKicks));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getAllShoes();
+  }, []);
 
   const [category, setCategory] = useState("all");
 
@@ -85,19 +104,23 @@ const StoreBody = () => {
         </div>
       </div>
       <div className="container">
-        <div className={styles.results}>
-          {showShoe.map((product) => (
-            <Result
-              img={product?.image}
-              name={product?.name}
-              cat={product?.category}
-              price={product?.price}
-              slash={product?.slashPrice}
-              id={product?._id}
-              key={product?._id}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <Loading loading={loading} />
+        ) : (
+          <div className={styles.results}>
+            {showShoe.map((product) => (
+              <Result
+                img={product?.image}
+                name={product?.name}
+                cat={product?.category}
+                price={product?.price}
+                slash={product?.slashPrice}
+                id={product?._id}
+                key={product?._id}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

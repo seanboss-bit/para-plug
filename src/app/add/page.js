@@ -4,6 +4,7 @@ import styles from "../../styles/add.module.css";
 import axios from "axios";
 import { publicRequest } from "../../../requests";
 import { toast } from "react-toastify";
+import Loading from "../../../components/Loading";
 
 const page = () => {
   const [name, setName] = useState("");
@@ -16,6 +17,7 @@ const page = () => {
   const [freeShipping, setFreeShipping] = useState(false);
   const [inStock, setInStock] = useState(true);
   const [size, setSize] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const uploadMultiple = async (file) => {
     const formData = new FormData();
@@ -30,6 +32,7 @@ const page = () => {
   };
 
   const handleSingleUpload = async () => {
+    setLoading(true);
     try {
       let arr = [];
       const data = await uploadMultiple(mainImg[0]);
@@ -50,6 +53,9 @@ const page = () => {
         inStock: inStock,
       });
       toast.success(res.data.message);
+      if (res.data) {
+        setLoading(false);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -138,14 +144,18 @@ const page = () => {
             <label>in stock*</label>
           </div>
         </form>
-        <button
-          className={styles.btn}
-          onClick={async () => {
-            await handleSingleUpload();
-          }}
-        >
-          add new kick
-        </button>
+        {loading ? (
+          <Loading />
+        ) : (
+          <button
+            className={styles.btn}
+            onClick={async () => {
+              await handleSingleUpload();
+            }}
+          >
+            add new kick
+          </button>
+        )}
       </div>
     </div>
   );

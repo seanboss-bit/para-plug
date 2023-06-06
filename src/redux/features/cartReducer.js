@@ -34,7 +34,7 @@ const cartSlice = createSlice({
     },
     removeProductQuantity: (state, action) => {
       const itemIndex = state.products.findIndex(
-        (item) => item.id === action.payload.id
+        (item) => item._id === action.payload._id
       );
 
       if (state.products[itemIndex].cartQuantity > 1) {
@@ -43,7 +43,7 @@ const cartSlice = createSlice({
     },
     addProductQuantity: (state, action) => {
       const itemIndex = state.products.findIndex(
-        (item) => item.id === action.payload.id
+        (item) => item._id === action.payload._id
       );
 
       state.products[itemIndex].cartQuantity += 1;

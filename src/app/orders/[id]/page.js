@@ -14,6 +14,9 @@ const page = () => {
   const [order, setOrder] = useState([]);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  function numberWithCommas(x) {
+    return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   const getOrder = async () => {
     setLoading(true);
     try {
@@ -53,8 +56,7 @@ const page = () => {
 
   useEffect(() => {
     getOrder();
-    // eslint-disable-next-line
-  }, []);
+  }, [id.id]);
   return (
     <div>
       <div className="container">
@@ -95,14 +97,14 @@ const page = () => {
                   <p>size : {item?.size}</p>
                 </div>
               </div>
-              <div className={styles.cartprice}>NGN {item?.price}</div>
+              <div className={styles.cartprice}>NGN {numberWithCommas(item?.price)}</div>
               <div className={styles.res}>
                 <div className={styles.cartquantity}>
                   <div className="count">{item?.cartQuantity}</div>
                 </div>
               </div>
               <div className={styles.carttotal}>
-                NGN {item?.price * item?.cartQuantity}
+                NGN {numberWithCommas(item?.price * item?.cartQuantity)}
               </div>
             </div>
           ))}

@@ -7,38 +7,45 @@ import { publicRequest } from "../../../../requests";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import Loading from "../../../../components/Loading";
 
 const page = () => {
   const id = useParams();
-  const [order, setOrder] = useState({});
+  const [order, setOrder] = useState([]);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const getOrder = async () => {
+    setLoading(true);
     try {
       const res = await publicRequest.get("/order/find/" + id.id);
       setOrder(res.data.product);
-      console.log(res);
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
   const updateOrder = async () => {
+    setLoading(true);
     try {
       const res = await publicRequest.put("/order/" + id.id, {
         completed: true,
       });
       toast.success(res.data.message);
       router.push("/orders");
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
   const deleteOrder = async () => {
+    setLoading(true);
     try {
       const res = await publicRequest.delete("/order/" + id.id);
       toast.success(res.data.message);
       router.push("/orders");
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -50,21 +57,25 @@ const page = () => {
   return (
     <div>
       <div className="container">
-        <div className={styles.top}>
-          <Link href={"/orders"}>
-            {" "}
-            <ArrowUturnLeftIcon />
-          </Link>
-          <div>
-            <button onClick={() => updateOrder()}>completed</button>
-            <button onClick={() => deleteOrder()}>delete</button>
+        {loading ? (
+          <Loading loading={loading} />
+        ) : (
+          <div className={styles.top}>
+            <Link href={"/orders"}>
+              {" "}
+              <ArrowUturnLeftIcon />
+            </Link>
+            <div>
+              <button onClick={() => updateOrder()}>completed</button>
+              <button onClick={() => deleteOrder()}>delete</button>
+            </div>
           </div>
-        </div>
+        )}
         <div className={styles.middle}>
-          <h4>customer {order.name}</h4>
-          <h4>email: {order.email}</h4>
-          <h4>phone: {order.phone}</h4>
-          <h4>address: {order.address}</h4>
+          <h4>customer {order?.name}</h4>
+          <h4>email: {order?.email}</h4>
+          <h4>phone: {order?.phone}</h4>
+          <h4>address: {order?.address}</h4>
         </div>
         <div className="bottom">
           <div className={styles.titles}>
@@ -74,23 +85,23 @@ const page = () => {
             <h3 className={styles.total}>total</h3>
           </div>
           {order.orders?.map((item, i) => (
-            <div className={styles.cartItem} key={i}>
-              <div className={styles.cartproduct}>
-                <img src={item.image} alt="#" />
+            <div className={styles?.cartItem} key={i}>
+              <div className={styles?.cartproduct}>
+                <img src={item?.image} alt="#" />
                 <div>
-                  <h3>{item.name}</h3>
-                  <p>{item.category}</p>
-                  <p>size : {item.size}</p>
+                  <h3>{item?.name}</h3>
+                  <p>{item?.category}</p>
+                  <p>size : {item?.size}</p>
                 </div>
               </div>
-              <div className={styles.cartprice}>NGN {item.price}</div>
+              <div className={styles.cartprice}>NGN {item?.price}</div>
               <div className={styles.res}>
                 <div className={styles.cartquantity}>
-                  <div className="count">{item.cartQuantity}</div>
+                  <div className="count">{item?.cartQuantity}</div>
                 </div>
               </div>
               <div className={styles.carttotal}>
-                NGN {item.price * item.cartQuantity}
+                NGN {item?.price * item?.cartQuantity}
               </div>
             </div>
           ))}

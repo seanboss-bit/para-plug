@@ -9,8 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 export const Providers = ({ children }) => {
   return (
     <Provider store={store}>
+      <ToastContainer />
       <PersistGate loading={null} persistor={persistor}>
-        <ToastContainer />
         {children}
       </PersistGate>
     </Provider>

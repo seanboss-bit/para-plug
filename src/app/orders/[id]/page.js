@@ -87,7 +87,7 @@ const page = () => {
             <h3 className="quantity">quantity</h3>
             <h3 className={styles.total}>total</h3>
           </div>
-          {order.orders?.map((item, i) => (
+          {order?.orders?.map((item, i) => (
             <div className={styles?.cartItem} key={i}>
               <div className={styles?.cartproduct}>
                 <img src={item?.image} alt="#" />

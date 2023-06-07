@@ -53,6 +53,7 @@ const page = () => {
 
   useEffect(() => {
     getOrder();
+    // eslint-disable-next-line
   }, []);
   return (
     <div>

@@ -2,11 +2,10 @@
 import Link from "next/link";
 import styles from "../../../styles/order.module.css";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { publicRequest } from "../../../../requests";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
 import Loading from "../../../../components/Loading";
 
 const page = () => {
@@ -56,7 +55,7 @@ const page = () => {
 
   useEffect(() => {
     getOrder();
-  }, [id.id]);
+  }, [id?.id]);
   return (
     <div>
       <div className="container">
@@ -97,7 +96,9 @@ const page = () => {
                   <p>size : {item?.size}</p>
                 </div>
               </div>
-              <div className={styles.cartprice}>NGN {numberWithCommas(item?.price)}</div>
+              <div className={styles.cartprice}>
+                NGN {numberWithCommas(item?.price)}
+              </div>
               <div className={styles.res}>
                 <div className={styles.cartquantity}>
                   <div className="count">{item?.cartQuantity}</div>

@@ -17,7 +17,7 @@ const page = () => {
   const getOrder = async () => {
     setLoading(true);
     try {
-      const res = await publicRequest.get("/order/find/" + id.id);
+      const res = await publicRequest.get(`/order/find/${id.id}`);
       setOrder(res.data.product);
       setLoading(false);
     } catch (error) {
@@ -28,7 +28,7 @@ const page = () => {
   const updateOrder = async () => {
     setLoading(true);
     try {
-      const res = await publicRequest.put("/order/" + id.id, {
+      const res = await publicRequest.put(`/order/${id.id}`, {
         completed: true,
       });
       toast.success(res.data.message);
@@ -42,7 +42,7 @@ const page = () => {
   const deleteOrder = async () => {
     setLoading(true);
     try {
-      const res = await publicRequest.delete("/order/" + id.id);
+      const res = await publicRequest.delete(`/order/${id.id}`);
       toast.success(res.data.message);
       router.push("/orders");
       setLoading(false);

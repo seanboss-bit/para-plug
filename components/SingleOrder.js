@@ -44,7 +44,7 @@ const SingleOrder = async () => {
   const deleteOrder = async () => {
     setLoading(true);
     try {
-      const res = await publicRequest.delete(`/order/${id.id}`);
+      const res = await publicRequest.delete(`/order/${id}`);
       toast.success(res.data.message);
       router.push("/orders");
       setLoading(false);

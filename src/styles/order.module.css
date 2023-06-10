@@ -177,4 +177,7 @@
   .middle{
     flex-wrap: wrap;
   }
+  .orderbody{
+    grid-template-columns: 1fr;
+  }
 }

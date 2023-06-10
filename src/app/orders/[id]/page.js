@@ -2,35 +2,45 @@
 import Link from "next/link";
 import styles from "../../../styles/order.module.css";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { publicRequest } from "../../../../requests";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Loading from "../../../../components/Loading";
 
-const page = () => {
-  const id = useParams();
-  const [order, setOrder] = useState([]);
-  const [loading, setLoading] = useState(false);
+const fetchSingleProduct = async (id) => {
+  const res = await publicRequest.get(`/order/find/${id}`);
+
+  return res.data.product;
+};
+
+const page = async () => {
   const router = useRouter();
+  const params = useParams();
+  const [loading, setLoading] = useState(false);
+  const id = params.id;
+  const order = await fetchSingleProduct(id);
+
+  console.log(order);
+
   function numberWithCommas(x) {
     return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  const getOrder = async () => {
-    setLoading(true);
-    try {
-      const res = await publicRequest.get(`/order/find/${id.id}`);
-      setOrder(res.data.product);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getOrder = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const res = await publicRequest.get(`/order/find/${id}`);
+  //     setOrder(res.data.product);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const updateOrder = async () => {
     setLoading(true);
     try {
-      const res = await publicRequest.put(`/order/${id.id}`, {
+      const res = await publicRequest.put(`/order/${id}`, {
         completed: true,
       });
       toast.success(res.data.message);
@@ -53,9 +63,7 @@ const page = () => {
     }
   };
 
-  useEffect(() => {
-    getOrder();
-  }, [id?.id]);
+ 
   return (
     <div>
       <div className="container">

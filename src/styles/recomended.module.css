@@ -17,10 +17,12 @@
 .card img {
   width: 100%;
   margin-bottom: 15px;
+  height: 100px;
+  object-fit: contain;
 }
 .card h5 {
   text-transform: capitalize;
-  font-size: 15px;
+  font-size: 13px;
 }
 .low {
   text-transform: capitalize;

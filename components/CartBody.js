@@ -122,12 +122,12 @@ const CartBody = () => {
                 </div>
                 <div className={styles.subtotal}>
                   <span>shipping</span>
-                  <span className={styles.amount}>NGN 500</span>
+                  <span className={styles.amount}>NGN 3,500</span>
                 </div>
                 <div className={styles.subtotal}>
                   <span>total</span>
                   <span className={styles.amount}>
-                    NGN {numberWithCommas(cart.total + 500)}
+                    NGN {numberWithCommas(cart.total + 3500)}
                   </span>
                 </div>
                 <button onClick={() => setPayment(1)}>checkout</button>
@@ -157,7 +157,7 @@ const CartBody = () => {
               </span>
               <span className={styles.accwarning}>payment validates order</span>
               <span className={styles.pay}>
-                you are about to pay {numberWithCommas(cart.total + 500)}
+                you are about to pay {numberWithCommas(cart.total + 3500)}
               </span>
               <div className={styles.accdetails}>
                 <div>

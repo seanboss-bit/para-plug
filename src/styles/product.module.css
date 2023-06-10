@@ -93,6 +93,14 @@
   font-weight: 500;
   font-size: 14px;
 }
+.out{
+  width: 100%;
+  background: #bbb;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 0px;
+}
 
 
 @media screen and (max-width: 1200px) {

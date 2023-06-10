@@ -109,9 +109,16 @@ const Product = () => {
                     ))}
                   </select>
                 </div>
-                <button className={styles.btn} onClick={() => add(singleItem)}>
-                  add to cart
-                </button>
+                {singleItem?.inStock ? (
+                  <button
+                    className={styles.btn}
+                    onClick={() => add(singleItem)}
+                  >
+                    add to cart
+                  </button>
+                ) : (
+                  <div className={styles.out}>out of stock</div>
+                )}
               </div>
             </div>
           </div>

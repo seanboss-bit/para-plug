@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requests";
 import Loading from "./Loading";
+import { addShoe } from "@/redux/features/shoeReducer";
 
 const StoreBody = () => {
   const [loading, setLoading] = useState(false);
@@ -17,14 +18,15 @@ const StoreBody = () => {
     try {
       const res = await publicRequest.get("/product");
       setShowShoe(res.data.allKicks);
+      dispatch(addShoe(res.data.allKicks));
       if (res.data) {
         setLoading(false);
       }
-      dispatch(addShoe(res.data.allKicks));
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getAllShoes();
   }, []);
@@ -37,7 +39,7 @@ const StoreBody = () => {
 
   useEffect(() => {
     if (category === "all") {
-      setShowShoe(shoes);
+      getAllShoes();
     } else if (category === "nikes") {
       setShowShoe(shoes.filter((item) => item.category === "nike"));
     } else {
@@ -57,6 +59,7 @@ const StoreBody = () => {
     }
   }, [latest, searchValue]);
 
+ 
   const search = () => {
     setShowShoe(
       shoes.filter((item) => {
@@ -117,6 +120,7 @@ const StoreBody = () => {
                 slash={product?.slashPrice}
                 id={product?._id}
                 key={product?._id}
+                stock={product?.inStock}
               />
             ))}
           </div>

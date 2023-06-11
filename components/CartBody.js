@@ -120,14 +120,19 @@ const CartBody = () => {
                     NGN {numberWithCommas(cart.total)}
                   </span>
                 </div>
-                <div className={styles.subtotal}>
-                  <span>shipping</span>
-                  <span className={styles.amount}>NGN 3,500</span>
-                </div>
+                {cart.total >= 150000 ? null : (
+                  <div className={styles.subtotal}>
+                    <span>shipping</span>
+                    <span className={styles.amount}>NGN 3,500</span>
+                  </div>
+                )}
                 <div className={styles.subtotal}>
                   <span>total</span>
                   <span className={styles.amount}>
-                    NGN {numberWithCommas(cart.total + 3500)}
+                    NGN{" "}
+                    {cart.total >= 150000
+                      ? numberWithCommas(cart.total)
+                      : numberWithCommas(cart.total + 3500)}
                   </span>
                 </div>
                 <button onClick={() => setPayment(1)}>checkout</button>
@@ -157,7 +162,10 @@ const CartBody = () => {
               </span>
               <span className={styles.accwarning}>payment validates order</span>
               <span className={styles.pay}>
-                you are about to pay {numberWithCommas(cart.total + 3500)}
+                you are about to pay{" "}
+                {cart.total >= 150000
+                  ? numberWithCommas(cart.total)
+                  : numberWithCommas(cart.total + 3500)}
               </span>
               <div className={styles.accdetails}>
                 <div>

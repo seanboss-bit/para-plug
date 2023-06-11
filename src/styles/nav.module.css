@@ -34,7 +34,7 @@
   transition: 0.3s;
   color: #a11f25;
 }
-.active{
+.active {
   color: #a11f25 !important;
 }
 .navinner svg {
@@ -79,7 +79,15 @@
 .res {
   flex: 1;
 }
+.respic {
+  display: none;
+}
 @media screen and (max-width: 1200px) {
+  .respic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .mainnav {
     position: sticky;
     left: 0;
@@ -147,9 +155,11 @@
   .navlink {
     margin: 20px 0px;
     padding: 0px 20px;
+    margin-bottom: 160%;
   }
   .navlink a {
     display: block;
+    margin: 10px 0px;
   }
   .res {
     flex: 0;

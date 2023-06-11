@@ -71,6 +71,9 @@ const Navbar = () => {
                   About Us
                 </Link>
               </div>
+              <div className={styles.respic}>
+                <Image src={'/para.png'} height={100} width={100}/>
+              </div>
               <Link href="/cart" className={styles.shopping}>
                 <ShoppingCartIcon />
                 {products?.length > 0 ? <span>{products.length}</span> : null}

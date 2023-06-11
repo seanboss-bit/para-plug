@@ -1,10 +1,11 @@
 .main {
-  height: 90vh;
-  background: url("https://paraplug.org/wp-content/uploads/2023/02/hermes-rivera-w83s82yd3Fk-unsplash-scaled.jpg");
+  height: 70vh;
+  background: url("../../public/para3.jpg");
   background-size: cover;
   position: relative;
   background-position: center center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .main::before {
   content: "";
@@ -42,14 +43,14 @@
   background: #000;
   color: #fff;
 }
-@media screen and (max-width:768px){
-    .inner{
-        text-align: center;
-    }
-    .inner h1{
-        font-size: 70px;
-    }
-    .main{
-        height: 85vh;
-    }
+@media screen and (max-width: 768px) {
+  .inner {
+    text-align: center;
+  }
+  .inner h1 {
+    font-size: 70px;
+  }
+  .main {
+    height: 85vh;
+  }
 }

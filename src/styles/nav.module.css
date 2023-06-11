@@ -171,4 +171,7 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .navlink{
+    margin-bottom: 100%;
+  }
 }

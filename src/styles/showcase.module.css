@@ -6,6 +6,9 @@
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main::before {
   content: "";

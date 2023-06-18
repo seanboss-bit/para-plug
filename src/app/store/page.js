@@ -9,7 +9,7 @@ const page = () => {
     <div>
       <Navbar />
       <div className={styles.vidcontainer}>
-        <video src="/banner.mp4" autoPlay loop />
+        <video src="/banner.mp4" autoPlay loop controls={false}/>
       </div>
       <StoreBody />
       <Footer />

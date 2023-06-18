@@ -88,6 +88,9 @@
   margin-bottom: 20px;
   height: 100px;
 }
+.vidcontainer video{
+  width: 100%;
+}
 @media screen and (max-width: 768px) {
   .filtersearch {
     width: 100%;

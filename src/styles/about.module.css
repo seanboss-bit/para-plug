@@ -71,7 +71,11 @@
   margin: 90px 0px;
   padding: 20px;
 }
-
+.bannerMin img{
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
 @media screen and (max-width: 1200px) {
   .who {
     grid-template-columns: 1fr;

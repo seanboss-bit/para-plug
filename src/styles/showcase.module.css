@@ -1,5 +1,5 @@
 .main {
-  height: 70vh;
+  min-height: 70vh;
   background: url("../../public/para3.jpg");
   background-size: cover;
   position: relative;

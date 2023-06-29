@@ -1,17 +1,16 @@
 .main {
   min-height: 70vh;
   background: url("../../public/para3.jpg");
-  background-size: cover;
-  position: relative;
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-size: cover !important;
+  position: relative !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
 }
 .main::before {
   content: "";
@@ -50,6 +49,9 @@
   color: #fff;
 }
 @media screen and (max-width: 768px) {
+  .main{
+    background: url("../../public/para3.jpg") center center no-repeat scroll !important;
+  }
   .inner {
     text-align: center;
   }

@@ -9,6 +9,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
 .main::before {
   content: "";

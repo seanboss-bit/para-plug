@@ -15,9 +15,9 @@ const page = () => {
   return (
     <div>
       <Navbar />^
-      <div className={styles.bannerMin}>
+      {/* <div className={styles.bannerMin}>
         <img src="/banner.jpg" alt="#" />
-      </div>
+      </div> */}
       <AboutBody />
       <Footer />
     </div>

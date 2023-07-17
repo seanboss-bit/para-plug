@@ -4,6 +4,7 @@ import styles from "../../styles/order.module.css";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../../../requests";
 import Loading from "../../../components/Loading";
+import LoginNav from "../../../components/LoginNav";
 
 const page = () => {
   const [allOrders, setAllOrders] = useState([]);
@@ -27,6 +28,7 @@ const page = () => {
   }, []);
   return (
     <div className={styles.allOrders}>
+      <LoginNav />
       <div className="container">
         <h2>all orders</h2>
         {loading ? (

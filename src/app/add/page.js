@@ -5,6 +5,7 @@ import axios from "axios";
 import { publicRequest } from "../../../requests";
 import { toast } from "react-toastify";
 import Loading from "../../../components/Loading";
+import LoginNav from "../../../components/LoginNav";
 
 const page = () => {
   const [name, setName] = useState("");
@@ -63,6 +64,7 @@ const page = () => {
 
   return (
     <div className={styles.main}>
+      <LoginNav />
       <div className="container">
         <h2 className={styles.heading}>add new kicks</h2>
         <form className={styles.addkick}>

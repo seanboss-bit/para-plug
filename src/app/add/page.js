@@ -6,8 +6,11 @@ import { publicRequest } from "../../../requests";
 import { toast } from "react-toastify";
 import Loading from "../../../components/Loading";
 import LoginNav from "../../../components/LoginNav";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const page = () => {
+  const user = useSelector((state) => state.user.user);
   const [name, setName] = useState("");
   const [mainImg, setMainImg] = useState([]);
   const [price, setPrice] = useState("");
@@ -19,6 +22,13 @@ const page = () => {
   const [inStock, setInStock] = useState(true);
   const [size, setSize] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (user === null) {
+      window.location = "/login";
+    }
+  }, [user]);
+
 
   const uploadMultiple = async (file) => {
     const formData = new FormData();

@@ -88,8 +88,25 @@
   margin-bottom: 20px;
   height: 100px;
 }
-.vidcontainer video{
+.vidcontainer video {
   width: 100%;
+}
+.subresult {
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+.subresult img {
+  width: 100%;
+  margin-bottom: 40px;
 }
 @media screen and (max-width: 768px) {
   .filtersearch {

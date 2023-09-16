@@ -14,7 +14,7 @@ const page = () => {
   const router = useRouter();
   useEffect(() => {
     if (user !== null) {
-      window.location = "/add";
+      window.location = "/admin";
     }
   }, [user]);
 
@@ -23,7 +23,7 @@ const page = () => {
       toast.error("All Fields Required");
     } else if (username === "paraplug" && password === "paraplugadmin") {
       dispatch(login({ username, role: "admin" }));
-      router.push('/add')
+      router.push('/admin')
       toast.success("Welcome Admin");
     } else {
       toast.error("Wrong Credentials");

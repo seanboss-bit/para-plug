@@ -80,3 +80,53 @@
 .innermain {
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
+.links a {
+  text-transform: capitalize !important;
+  margin: 0px 15px;
+  text-decoration: none;
+  color: #000;
+}
+.inner svg {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .inner svg {
+    display: block;
+    height: 20px;
+  }
+  .innermain {
+    position: relative;
+    z-index: 10;
+  }
+  .links {
+    position: absolute;
+    bottom: -150%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    width: 100%;
+    left: 0;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+    z-index: 8;
+  }
+  .linksno {
+    position: absolute;
+    bottom: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    width: 100%;
+    left: 0;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+    z-index: 8;
+  }
+}

@@ -1,0 +1,131 @@
+.emailsuscribers {
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  border-radius: 10px;
+  height: fit-content;
+}
+.emailsuscribers p {
+  margin-bottom: 0;
+  border-bottom: 2px solid #0084d6;
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+}
+.emailsuscribers h4 {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+.adminbody {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+.contact h4 {
+  text-transform: capitalize;
+}
+.contacttop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.message {
+  font-size: 12px;
+}
+.messagebody {
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.shoesinner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+  height: 100vh;
+}
+.shoesinner img {
+  width: 100%;
+}
+.deletebtn {
+  background: red;
+  color: #fff;
+  outline: none;
+  border: 1px solid red;
+  text-transform: capitalize;
+  margin: 30px 0px;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+.addkick div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.addkick {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+  height: 70vh;
+  overflow-y: scroll;
+}
+.addkick label {
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.addkick select {
+  text-transform: capitalize;
+  padding: 8px 10px;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #0084d6;
+}
+.addkick input {
+  padding: 8px 10px;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #0084d6;
+}
+.addkick input:focus ~ label {
+  color: #0084d6;
+}
+.addkick textarea {
+  padding: 8px 10px;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #0084d6;
+}
+.btn {
+  width: 100%;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  background: #0084d6;
+  color: #fff;
+  padding: 10px 0px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.btn:hover {
+  background-color: #25acff;
+  transition: 0.3s ease-in-out;
+}
+@media screen and (max-width:768px){
+  .adminbody{
+    grid-template-columns: 1fr;
+  }
+  .shoesinner{
+    grid-template-columns: 1fr;
+  }
+  .addkick{
+    height: fit-content;
+    overflow: hidden;
+  }
+}

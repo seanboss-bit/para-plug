@@ -81,7 +81,7 @@ const Product = () => {
             <div className={styles.info}>
               <div>
                 <span className={styles.location}>
-                  home / {singleItem?.category} / {singleItem?.name}
+                  store / {singleItem?.category} / {singleItem?.name}
                 </span>
                 <p className={styles.cat}>{singleItem?.category}</p>
                 <h3 className={styles.infoname}>{singleItem?.name}</h3>

@@ -16,6 +16,7 @@ const NewsLetter = () => {
         email: email,
       });
       toast.success("Subscribed Sucessfully");
+      setEmail("");
     }
   };
   return (
@@ -33,6 +34,7 @@ const NewsLetter = () => {
               type="email"
               placeholder="Enter Email"
               onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
             <button onClick={(e) => post(e)}>
               <PaperAirplaneIcon />

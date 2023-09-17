@@ -1,6 +1,37 @@
+"use client";
+import { useState } from "react";
 import styles from "../src/styles/contact.module.css";
+import { toast } from "react-toastify";
+import { publicRequest } from "../requests";
 
 const ContactBody = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [subject, setSubject] = useState("");
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    if (name === "" || subject === "" || email === "" || message === "") {
+      toast.error("All Spaces Should Be Filled");
+    } else {
+      try {
+        const res = await publicRequest.post("/customer", {
+          name,
+          email,
+          subject,
+          message,
+        });
+        toast.success(res.data.message);
+        setName("");
+        setEmail("");
+        setMessage("");
+        setSubject("");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
   return (
     <div>
       <div className="container">
@@ -15,15 +46,30 @@ const ContactBody = () => {
           <div>
             <form>
               <div className={styles.inputBox}>
-                <input type="text" placeholder="Enter Fullname" />
+                <input
+                  type="text"
+                  placeholder="Enter Fullname"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
                 <label>Fullname</label>
               </div>
               <div className={styles.inputBox}>
-                <input type="email" placeholder="Enter Email" />
+                <input
+                  type="email"
+                  placeholder="Enter Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <label>email</label>
               </div>
               <div className={styles.inputBox}>
-                <input type="text" placeholder="Enter Subject" />
+                <input
+                  type="text"
+                  placeholder="Enter Subject"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                />
                 <label>subject</label>
               </div>
               <div className={styles.inputBox}>
@@ -31,10 +77,14 @@ const ContactBody = () => {
                   cols="5"
                   rows="5"
                   placeholder="Enter Message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
                 <label>message</label>
               </div>
-              <button className={styles.btn}>send message</button>
+              <button className={styles.btn} onClick={(e) => sendMessage(e)}>
+                send message
+              </button>
             </form>
           </div>
         </div>

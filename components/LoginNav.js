@@ -9,7 +9,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const LoginNav = () => {
   const user = useSelector((state) => state.user.user);
   const dispatch = useDispatch();
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (user === null) {

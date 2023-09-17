@@ -86,6 +86,12 @@
   text-decoration: none;
   color: #000;
 }
+.linksno a {
+  text-transform: capitalize !important;
+  margin: 0px 15px;
+  text-decoration: none;
+  color: #000;
+}
 .inner svg {
   display: none;
 }

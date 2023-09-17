@@ -3,14 +3,18 @@ import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import styles from "../src/styles/newsletter.module.css";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { publicRequest } from "../requests";
 
 const NewsLetter = () => {
   const [email, setEmail] = useState("");
-  const post = (e) => {
+  const post = async (e) => {
     e.preventDefault();
     if (email === "") {
       toast.error("Enter Your email Please");
     } else {
+      const res = await publicRequest.post("/email", {
+        email: email,
+      });
       toast.success("Subscribed Sucessfully");
     }
   };

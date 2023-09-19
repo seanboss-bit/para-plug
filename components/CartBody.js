@@ -24,7 +24,7 @@ const CartBody = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   const [payment, setPayment] = useState(0);

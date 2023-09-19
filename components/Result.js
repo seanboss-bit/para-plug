@@ -4,7 +4,7 @@ import styles from "../src/styles/store.module.css";
 
 const Result = ({ img, name, cat, price, slash, id, stock }) => {
   function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
   return (
     <Link href={`/product/${id}`} className={styles.shoecontainer}>

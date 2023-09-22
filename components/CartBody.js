@@ -18,6 +18,7 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { publicRequest } from "../requests";
+import { usePaystackPayment } from "react-paystack";
 
 const CartBody = () => {
   const products = useSelector((state) => state.cart.products);
@@ -43,26 +44,52 @@ const CartBody = () => {
   };
 
   const makeOrder = async () => {
-    if (name === "" || address === "" || phone === "" || email === "") {
-      toast.error("Please All Information is Required");
-    } else {
-      const res = await publicRequest.post("/order", {
-        name: name,
-        orders: products,
-        email,
-        address,
-        phone,
-      });
-      toast.success(res.data.message);
-      dispatch(clear());
-      setPayment(0);
-
-      console.log(products);
-    }
+    const res = await publicRequest.post("/order", {
+      name: name,
+      orders: products,
+      email,
+      address,
+      phone,
+    });
+    toast.success(res.data.message);
+    dispatch(clear());
+    setPayment(0);
   };
   useEffect(() => {
     dispatch(getCartTotal());
   }, [products]);
+
+  // PAYSTACK
+
+  const config = {
+    reference: new Date().getTime().toString(),
+    email: email,
+    amount:
+      cart.total >= 150000 ? cart.total * 100 : cart.total * 100 + 3500 * 100,
+    publicKey: "pk_live_ac6b008808fcabb5ad2b4fe75792b852672127dc",
+  };
+
+  // you can call this function anything
+  const onSuccess = (reference) => {
+    makeOrder();
+    console.log(reference);
+  };
+
+  // you can call this function anything
+  const onClose = () => {
+    toast.error("Transaction Closed");
+    console.log("closed");
+  };
+
+  const initializePayment = usePaystackPayment(config);
+
+  const toPay = () => {
+    if (name === "" || address === "" || phone === "" || email === "") {
+      toast.error("All Fields Required");
+    } else {
+      initializePayment(onSuccess, onClose);
+    }
+  };
   return (
     <div className={styles.cartbody}>
       <div className="container">
@@ -156,18 +183,18 @@ const CartBody = () => {
               <div className={styles.closebtn}>
                 <XMarkIcon onClick={() => setPayment(0)} />
               </div>
-              <span className={styles.accwarning}>
+              {/* <span className={styles.accwarning}>
                 please after payment make sure you send your payment receipt to
                 the whatsapp number just click on the whatsapp icon below
-              </span>
-              <span className={styles.accwarning}>payment validates order</span>
+              </span> */}
+              {/* <span className={styles.accwarning}>payment validates order</span> */}
               <span className={styles.pay}>
                 you are about to pay{" "}
                 {cart.total >= 150000
                   ? numberWithCommas(cart.total)
                   : numberWithCommas(cart.total + 3500)}
               </span>
-              <div className={styles.accdetails}>
+              {/* <div className={styles.accdetails}>
                 <div>
                   <p>account name:</p>
                   <span>nurudeen ibrahim opeyemi</span>
@@ -180,12 +207,12 @@ const CartBody = () => {
                   <p>account number:</p>
                   <span>2236242867</span>
                 </div>
-              </div>
+              </div> */}
               <form className={styles.userdata}>
                 <div>
                   <input
                     type="text"
-                    placeholder="Enter Name Used In Making Transfer"
+                    placeholder="Enter Name"
                     onChange={(e) => setName(e.target.value)}
                   />
                   <input
@@ -206,7 +233,11 @@ const CartBody = () => {
                   />
                 </div>
               </form>
-              <button className={styles.done} onClick={() => makeOrder()}>
+              <button className={styles.done} onClick={() => toPay()}>
+                <img
+                  src="https://static-00.iconduck.com/assets.00/paystack-icon-512x504-w7v8l6as.png"
+                  alt="#"
+                />
                 order kicks now
               </button>
             </div>

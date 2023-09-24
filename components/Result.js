@@ -1,13 +1,16 @@
-import Image from "next/image";
-import Link from "next/link";
 import styles from "../src/styles/store.module.css";
+import { motion } from "framer-motion";
 
-const Result = ({ img, name, cat, price, slash, id, stock }) => {
+const Result = ({ img, name, cat, price, slash, id, stock, item }) => {
   function numberWithCommas(x) {
     return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
   return (
-    <Link href={`/product/${id}`} className={styles.shoecontainer}>
+    <motion.a
+      href={`/product/${id}`}
+      className={styles.shoecontainer}
+      variants={item}
+    >
       <img src={img} alt="#" />
       <h4 className={styles.shoename}>{name}</h4>
       <p className={styles.shoecat}>{cat}</p>
@@ -19,7 +22,7 @@ const Result = ({ img, name, cat, price, slash, id, stock }) => {
       ) : (
         <p>Out of stock</p>
       )}
-    </Link>
+    </motion.a>
   );
 };
 

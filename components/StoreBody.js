@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { publicRequest } from "../requests";
 import Loading from "./Loading";
 import { addShoe } from "@/redux/features/shoeReducer";
+import { motion } from "framer-motion";
 
 const StoreBody = () => {
   const [loading, setLoading] = useState(false);
@@ -59,7 +60,6 @@ const StoreBody = () => {
     }
   }, [latest, searchValue]);
 
- 
   const search = () => {
     setShowShoe(
       shoes.filter((item) => {
@@ -72,6 +72,25 @@ const StoreBody = () => {
         }
       })
     );
+  };
+
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      scale: 0,
+      opacity: 0,
+    },
+    show: {
+      scale: 1,
+      opacity: 1,
+      transition: { ease: "easeIn", duration: 0.9 },
+    },
   };
 
   return (
@@ -110,7 +129,12 @@ const StoreBody = () => {
         {loading ? (
           <Loading loading={loading} />
         ) : (
-          <div className={styles.results}>
+          <motion.div
+            className={styles.results}
+            initial="hidden"
+            animate="show"
+            variants={container}
+          >
             {showShoe.map((product) => (
               <Result
                 img={product?.image}
@@ -121,9 +145,10 @@ const StoreBody = () => {
                 id={product?._id}
                 key={product?._id}
                 stock={product?.inStock}
+                item={item}
               />
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
     </div>

@@ -1,6 +1,13 @@
 import "./globals.css";
 import { Providers } from "../redux/provider";
 import Whatsapp from "../../components/Whatsapp";
+import { Poppins } from "next/font/google";
+
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata = {
   title: "ParaPlug Store - Nike and Jordan Sneakers Store",
@@ -32,7 +39,7 @@ export default function RootLayout({ children }) {
           referrerPolicy="no-referrer"
         />{" "}
       </head>
-      <body>
+      <body className={poppins.className}>
         <Providers>{children}</Providers>
         <Whatsapp />
       </body>

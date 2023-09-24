@@ -4,6 +4,7 @@ import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import styles from "../src/styles/recomended.module.css";
 import RecCard from "./RecCard";
 import { publicRequest } from "../requests";
+import { motion } from "framer-motion";
 
 const Recomended = () => {
   const [kicks, setKicks] = useState([]);
@@ -24,17 +25,41 @@ const Recomended = () => {
     getRandom();
   }, []);
 
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      scale: 0,
+      opacity: 0,
+    },
+    show: {
+      scale: 1,
+      opacity: 1,
+      transition: { ease: "easeIn", duration: 0.9 },
+    },
+  };
+
   return (
     <div>
       <div className="container">
         <h3 className={styles.heading}>
           Recommended For You <QuestionMarkCircleIcon />
         </h3>
-        <div className={styles.recommend}>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          className={styles.recommend}
+        >
           {kicks.map((kick) => (
-            <RecCard key={kick._id} kick={kick} />
+            <RecCard key={kick._id} kick={kick} item={item} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

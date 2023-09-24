@@ -1,11 +1,36 @@
+"use client";
 import styles from "../src/styles/category.module.css";
+import { motion } from "framer-motion";
 
 const Category = () => {
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      scale: 0,
+      opacity: 0,
+    },
+    show: {
+      scale: 1,
+      opacity: 1,
+      transition: { ease: "easeIn", duration: 1 },
+    },
+  };
   return (
     <div>
       <div className="container">
-        <div className={styles.allslides}>
-          <div className={styles.firstslide}>
+        <motion.div
+          className={styles.allslides}
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+        >
+          <motion.div className={styles.firstslide} variants={item}>
             <div className={styles.content}>
               <h3>Jordan 3 retro fire red 2022 </h3>
               <p>
@@ -18,8 +43,8 @@ const Category = () => {
               </p>
               <a href="/store">shop now</a>
             </div>
-          </div>
-          <div className={styles.secondslide}>
+          </motion.div>
+          <motion.div variants={item} className={styles.secondslide}>
             <div className={styles.content}>
               <h3>Nike SB x Air Jordan 4 </h3>
               <p>
@@ -30,8 +55,8 @@ const Category = () => {
               </p>
               <a href="/store">shop now</a>
             </div>
-          </div>
-          <div className={styles.thirdslide}>
+          </motion.div>
+          <motion.div variants={item} className={styles.thirdslide}>
             <div className={styles.content}>
               <h3>Travis Scott </h3>
               <p>
@@ -44,8 +69,8 @@ const Category = () => {
               </p>
               <a href="/store">shop now</a>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

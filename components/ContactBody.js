@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "../src/styles/contact.module.css";
 import { toast } from "react-toastify";
 import { publicRequest } from "../requests";
+import { motion } from "framer-motion";
 
 const ContactBody = () => {
   const [name, setName] = useState("");
@@ -32,6 +33,25 @@ const ContactBody = () => {
       }
     }
   };
+
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      y: 200,
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { ease: "easeIn", duration: 0.9 },
+    },
+  };
   return (
     <div>
       <div className="container">
@@ -44,8 +64,8 @@ const ContactBody = () => {
             />
           </div>
           <div>
-            <form>
-              <div className={styles.inputBox}>
+            <motion.form initial="hidden" animate="show" variants={container}>
+              <motion.div className={styles.inputBox} variants={item}>
                 <input
                   type="text"
                   placeholder="Enter Fullname"
@@ -53,8 +73,8 @@ const ContactBody = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
                 <label>Fullname</label>
-              </div>
-              <div className={styles.inputBox}>
+              </motion.div>
+              <motion.div variants={item} className={styles.inputBox}>
                 <input
                   type="email"
                   placeholder="Enter Email"
@@ -62,8 +82,8 @@ const ContactBody = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <label>email</label>
-              </div>
-              <div className={styles.inputBox}>
+              </motion.div>
+              <motion.div variants={item} className={styles.inputBox}>
                 <input
                   type="text"
                   placeholder="Enter Subject"
@@ -71,8 +91,8 @@ const ContactBody = () => {
                   onChange={(e) => setSubject(e.target.value)}
                 />
                 <label>subject</label>
-              </div>
-              <div className={styles.inputBox}>
+              </motion.div>
+              <motion.div variants={item} className={styles.inputBox}>
                 <textarea
                   cols="5"
                   rows="5"
@@ -81,11 +101,11 @@ const ContactBody = () => {
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
                 <label>message</label>
-              </div>
+              </motion.div>
               <button className={styles.btn} onClick={(e) => sendMessage(e)}>
                 send message
               </button>
-            </form>
+            </motion.form>
           </div>
         </div>
       </div>

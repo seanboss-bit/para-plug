@@ -8,6 +8,7 @@ import { publicRequest } from "../requests";
 import { addShoe } from "@/redux/features/shoeReducer";
 import { motion } from "framer-motion";
 import Loader from "./Loader";
+import Loading from "./Loading";
 
 const StoreBody = () => {
   const [loading, setLoading] = useState(false);
@@ -131,7 +132,7 @@ const StoreBody = () => {
       </div>
       <div className="container">
         {loading ? (
-          <Loader />
+          <Loading />
         ) : (
           <motion.div
             className={styles.results}

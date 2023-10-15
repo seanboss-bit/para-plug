@@ -29,18 +29,19 @@ const Navbar = () => {
     <div className={navScroll ? styles.mainnav2 : styles.mainnav}>
       <div className="container">
         <div className={styles.navinner}>
-          <Link href="/">
+        <div className={styles.bars} onClick={() => setOpenNav(true)}>
+              <Bars3Icon />
+            </div>
+          <Link href="/" className={styles.imgcont}>
             <Image
-              src="/para2.png"
+              src="/head.png"
               alt="#"
               width={100}
               height={100}
             />
           </Link>
           <div className={styles.res}>
-            <div className={styles.bars} onClick={() => setOpenNav(true)}>
-              <Bars3Icon />
-            </div>
+           
             <div className={openNav ? styles.reslink : styles.links}>
               <div className={styles.bars} onClick={() => setOpenNav(false)}>
                 <XMarkIcon />

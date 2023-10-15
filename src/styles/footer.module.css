@@ -1,8 +1,5 @@
 .main {
-  background: url("https://paraplug.org/wp-content/uploads/2023/02/hermes-rivera-w83s82yd3Fk-unsplash-scaled.jpg");
-  background-size: cover;
   position: relative;
-  background-position: center center;
   display: flex;
   align-items: center;
   justify-content: center;

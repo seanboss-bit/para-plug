@@ -7,7 +7,7 @@
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   z-index: 98;
   transition: 0.3s;
-  background: transparent;
+  background: #fff;
 }
 .mainnav2 {
   position: fixed;
@@ -63,9 +63,8 @@
   right: 10%;
 }
 .navinner img {
-  width: 100px;
+  width: 140px;
   object-fit: contain;
-  margin-top: -8px;
 }
 .links {
   display: flex;
@@ -173,5 +172,13 @@
 @media screen and (max-width: 768px) {
   .navlink{
     margin-bottom: 100%;
+  }
+  .imgcont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bars svg{
+    padding: 0 15px;
   }
 }

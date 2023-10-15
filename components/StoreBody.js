@@ -5,9 +5,9 @@ import Result from "./Result";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requests";
-import Loading from "./Loading";
 import { addShoe } from "@/redux/features/shoeReducer";
 import { motion } from "framer-motion";
+import Loader from "./Loader";
 
 const StoreBody = () => {
   const [loading, setLoading] = useState(false);
@@ -16,6 +16,7 @@ const StoreBody = () => {
   const dispatch = useDispatch();
 
   const getAllShoes = async () => {
+    setLoading(true);
     try {
       const res = await publicRequest.get("/product");
       setShowShoe(res.data.allKicks);
@@ -95,6 +96,9 @@ const StoreBody = () => {
 
   return (
     <div className={styles.store}>
+      <div className={styles.vidcontainer}>
+        <video src="/banner.mp4" autoPlay loop controls={false} />
+      </div>
       <div className={styles.filters}>
         <div className="container">
           <div className={styles.filterInner}>
@@ -127,7 +131,7 @@ const StoreBody = () => {
       </div>
       <div className="container">
         {loading ? (
-          <Loading loading={loading} />
+          <Loader />
         ) : (
           <motion.div
             className={styles.results}

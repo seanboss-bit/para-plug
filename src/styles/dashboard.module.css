@@ -1,0 +1,214 @@
+.navmain {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease-in-out;
+}
+.navinner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+
+.navinner img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.navinner svg {
+  height: 30px;
+  color: red;
+  cursor: pointer;
+}
+
+.navimg {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.navimg p {
+  margin-bottom: 0;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.navimg span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.showcasemain {
+  height: 60vh;
+  background: url("https://images.unsplash.com/photo-1633464130613-0a9154299ac2?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGpvcmRhbiUyMHNob2VzfGVufDB8fDB8fHww");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  padding: 50px 0px;
+}
+.showcasemain::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #0084d6, #000);
+  opacity: 0.5;
+}
+
+.showcasemain > div {
+  position: relative;
+}
+.showcasemain h2 {
+  color: #fff;
+  font-size: 70px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.showcasemain a {
+  display: block;
+  text-transform: capitalize;
+  background: #000;
+  width: fit-content;
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #000;
+  transition: 0.3s ease-in-out;
+  margin-top: 20px;
+}
+.showcasemain a:hover {
+  background: transparent;
+  letter-spacing: 2px;
+  color: #000;
+  font-weight: bold;
+}
+
+.orderbox {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  text-transform: capitalize;
+  border-radius: 10px;
+  width: fit-content;
+}
+.orderbox img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+.orderid {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.complete {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.complete span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: green;
+}
+.incomplete {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.incomplete span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: red;
+}
+.price {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+.sum {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.sum p {
+  margin-bottom: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.sum button {
+  background: none;
+  text-transform: capitalize;
+  border: none;
+  text-decoration: underline;
+  color: #afafaf;
+  font-size: 14px;
+  transition: 0.3s ease-in-out;
+}
+.sum button:hover {
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.orderrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.orderMain{
+    margin: 20px 0px;
+}
+.orderMain h2 {
+  text-transform: capitalize;
+  margin: 0px;
+}
+.orderHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0px;
+}
+.orderHeading a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #afafaf;
+}
+
+@media screen and (max-width: 768px) {
+  .navinner img {
+    width: 40px;
+    height: 40px;
+  }
+  .showcasemain h2 {
+    font-size: 40px;
+    letter-spacing: 1.5px;
+  }
+  .orderbox {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+  .incomplete,
+  .complete {
+    justify-content: center;
+  }
+}

@@ -102,7 +102,8 @@
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   text-transform: capitalize;
   border-radius: 10px;
-  width: fit-content;
+  min-width: fit-content;
+  margin: 30px 0px;
 }
 .orderbox img {
   width: 200px;
@@ -170,12 +171,14 @@
 .orderrow {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 30px;
+  overflow-x: scroll;
 }
-.orderMain{
-    margin: 20px 0px;
+.orderrow::-webkit-scrollbar {
+  display: none;
+}
+.orderMain {
+  margin: 20px 0px;
 }
 .orderMain h2 {
   text-transform: capitalize;
@@ -193,10 +196,292 @@
   color: #afafaf;
 }
 
+.refInner h2 {
+  text-transform: capitalize;
+  margin-top: 40px;
+}
+.refInner p {
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.refBody {
+  border: 2px solid #afafaf;
+  margin: 30px 0px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.refBody h3 {
+  text-transform: capitalize;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.refBody h3 span {
+  color: #0084d6;
+  font-weight: bold;
+}
+
+.refBody p {
+  text-transform: capitalize;
+}
+.refBody p span {
+  color: #0084d6;
+}
+
+.refBar {
+  display: grid;
+  grid-template-columns: 10fr 2fr;
+}
+
+.progress {
+  width: 100%;
+  height: 10px;
+  background: #d4d4d4;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.progressBody {
+  margin: 60px 0px;
+}
+
+.progressBody span {
+  text-align: center;
+  font-size: 30px;
+  display: block;
+  text-transform: capitalize;
+}
+.shareMain {
+  text-transform: capitalize;
+  color: #0084d6;
+}
+
+.shareLink span {
+  display: block;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  background: #f3f8ff;
+  padding: 30px;
+  border-radius: 10px;
+  gap: 30px;
+  width: fit-content;
+}
+
+.link svg {
+  height: 20px;
+}
+
+.link span {
+  color: #0084d6;
+  font-size: 18px;
+}
+
+.link button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+  padding: 10px 30px;
+  background: #0084d6;
+  color: #fff;
+  border: 2px solid #0084d6;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.link button:hover {
+  background: transparent;
+  color: #0084d6;
+}
+
+.socialBox {
+  background: #f3f8ff;
+  padding: 20px;
+  color: #0084d6;
+  font-size: 35px;
+  font-weight: bold;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ref {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.detbg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #afafaf89;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 40px;
+}
+.detbody {
+  padding: 40px;
+  background: #fff;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.detbody svg {
+  height: 30px;
+  cursor: pointer;
+}
+
+.cl {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.cartItem,
+.titles {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+.cartItem {
+  border-top: 1px solid #eee;
+  padding: 10px;
+}
+
+.titles h3 {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.productitile {
+  padding-left: 10px;
+}
+.total {
+  justify-self: right;
+}
+
+.cartproduct {
+  display: flex;
+  gap: 25px;
+}
+.cartproduct img {
+  width: 100px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.cartproduct h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+}
+.cartproduct p {
+  text-transform: capitalize;
+  margin-bottom: 0;
+}
+.cartproduct button {
+  outline: none;
+  border: none;
+  margin-top: 10px;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  color: gray;
+  text-transform: capitalize;
+}
+.cartproduct button:hover {
+  color: #000;
+  transition: 0.3s ease;
+}
+.cartquantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  max-width: 100%;
+  border: 1px solid #a4a4a4;
+  border-radius: 5px;
+}
+.cartquantity svg {
+  height: 20px;
+}
+.cartquantity button {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+}
+.carttotal {
+  justify-self: right;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 768px) {
+  .titles {
+    display: none;
+  }
+  .cartItem {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+  .res {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cartprice {
+    text-align: center;
+  }
+  .carttotal {
+    justify-self: center;
+  }
+  .ref {
+    grid-template-columns: 1fr;
+  }
+  .refInner p,
+  .refBody p,
+  .shareText {
+    text-align: center;
+    display: block;
+  }
+  .progressBody span {
+    font-size: 18px;
+  }
   .navinner img {
     width: 40px;
     height: 40px;
+  }
+  .link {
+    flex-direction: column;
   }
   .showcasemain h2 {
     font-size: 40px;

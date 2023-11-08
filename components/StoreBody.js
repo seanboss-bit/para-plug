@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { publicRequest } from "../requests";
 import { addShoe } from "@/redux/features/shoeReducer";
 import { motion } from "framer-motion";
-import Loader from "./Loader";
 import Loading from "./Loading";
 
 const StoreBody = () => {
@@ -48,7 +47,7 @@ const StoreBody = () => {
     } else {
       setShowShoe(shoes.filter((item) => item.category === "jordan"));
     }
-  }, [category, searchValue]);
+  }, [category]);
 
   useEffect(() => {
     if (latest === "newest") {
@@ -60,7 +59,7 @@ const StoreBody = () => {
     } else {
       setShowShoe((prev) => [...prev].sort((a, b) => b.price - a.price));
     }
-  }, [latest, searchValue]);
+  }, [latest]);
 
   const search = () => {
     setShowShoe(
@@ -107,7 +106,10 @@ const StoreBody = () => {
               <input
                 type="text"
                 placeholder="Search Here...."
-                onChange={(e) => setSearchValue(e.target.value)}
+                onChange={(e) => {
+                  e.preventDefault();
+                  setSearchValue(e.target.value);
+                }}
               />
               <button onClick={() => search()}>
                 <MagnifyingGlassIcon />

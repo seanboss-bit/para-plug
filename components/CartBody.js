@@ -19,18 +19,21 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { publicRequest } from "../requests";
 import { usePaystackPayment } from "react-paystack";
+import Loading from "./Loading";
 
 const CartBody = () => {
   const products = useSelector((state) => state.cart.products);
   const cart = useSelector((state) => state.cart);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   function numberWithCommas(x) {
     return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  const user = useSelector((state) => state.user.user);
 
   const [payment, setPayment] = useState(0);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState(user?.fullName);
+  const [email, setEmail] = useState(user?.email);
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const remove = (item) => {
@@ -44,14 +47,18 @@ const CartBody = () => {
   };
 
   const makeOrder = async () => {
+    setLoading(true);
     const res = await publicRequest.post("/order", {
       name: name,
       orders: products,
       email,
       address,
       phone,
+      userId: user?._id,
+      total: cart.total >= 150000 ? cart.total : cart.total + 3500,
     });
     toast.success(res.data.message);
+    setLoading(false);
     dispatch(clear());
     setPayment(0);
   };
@@ -66,6 +73,8 @@ const CartBody = () => {
     email: email,
     amount:
       cart.total >= 150000 ? cart.total * 100 : cart.total * 100 + 3500 * 100,
+
+    // publicKey: "pk_test_57fa1e02ffb5765c3aaa7c812852a52739366451",
     publicKey: "pk_live_ac6b008808fcabb5ad2b4fe75792b852672127dc",
   };
 
@@ -92,6 +101,7 @@ const CartBody = () => {
   };
   return (
     <div className={styles.cartbody}>
+      {loading && <Loading />}
       <div className="container">
         <h1>cart ({products.length})</h1>
         {products.length > 0 ? (
@@ -213,11 +223,13 @@ const CartBody = () => {
                   <input
                     type="text"
                     placeholder="Enter Name"
+                    value={user?.fullName}
                     onChange={(e) => setName(e.target.value)}
                   />
                   <input
                     type="email"
                     placeholder="Enter Your Email"
+                    value={user?.email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>

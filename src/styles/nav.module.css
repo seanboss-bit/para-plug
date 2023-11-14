@@ -81,6 +81,36 @@
 .respic {
   display: none;
 }
+.userPres {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.userPres img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+.resLog {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.resLog a {
+  background: #0084d6;
+  text-align: center;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  border: 1px solid #0084d6;
+}
+.resLog a:hover {
+  background: transparent;
+  color: #0084d6;
+}
 @media screen and (max-width: 1200px) {
   .respic {
     display: flex;
@@ -104,7 +134,7 @@
     width: 100%;
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     z-index: 98;
-    transition:all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     background: #fff;
   }
   .navinner {
@@ -170,15 +200,29 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .navlink{
-    margin-bottom: 100%;
+  .userPres {
+    justify-content: center;
+    margin-bottom: 40%;
   }
-  .imgcont{
+  .resLog {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40%;
+    padding: 0px 30px;
+    gap: 20px;
+  }
+  .resLog a {
+    padding: 10px;
+  }
+  .navlink {
+    margin-bottom: 50%;
+  }
+  .imgcont {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .bars svg{
+  .bars svg {
     padding: 0 15px;
   }
 }

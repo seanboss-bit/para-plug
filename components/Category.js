@@ -29,6 +29,7 @@ const Category = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
+          viewport={{once: true, amount:0.25}}
         >
           <motion.div className={styles.firstslide} variants={item}>
             <div className={styles.content}>

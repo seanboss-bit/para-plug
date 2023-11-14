@@ -55,6 +55,7 @@ const Recomended = () => {
           initial="hidden"
           whileInView="show"
           className={styles.recommend}
+          viewport={{once: true, amount:0.25}}
         >
           {kicks.map((kick) => (
             <RecCard key={kick._id} kick={kick} item={item} />

@@ -1,8 +1,9 @@
-import Login from "../../../components/Login";
+import Confirm from "../../../../components/Confirm";
+
 const page = () => {
   return (
     <>
-      <Login />
+      <Confirm />
     </>
   );
 };

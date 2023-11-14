@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../src/styles/product.module.css";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { addProduct } from "@/redux/features/cartReducer";
 import { publicRequest } from "../requests";
@@ -18,6 +18,7 @@ const Product = () => {
   const dispatch = useDispatch();
   const [singleItem, setSingleItem] = useState();
   const [size, setSize] = useState("size");
+  const user = useSelector((state) => state.user.user);
 
   const getItem = async () => {
     setLoading(true);
@@ -109,15 +110,26 @@ const Product = () => {
                     ))}
                   </select>
                 </div>
-                {singleItem?.inStock ? (
-                  <button
-                    className={styles.btn}
-                    onClick={() => add(singleItem)}
-                  >
-                    add to cart
-                  </button>
+                {user ? (
+                  <>
+                    {" "}
+                    {singleItem?.inStock ? (
+                      <button
+                        className={styles.btn}
+                        onClick={() => add(singleItem)}
+                      >
+                        add to cart
+                      </button>
+                    ) : (
+                      <div className={styles.out}>out of stock</div>
+                    )}
+                  </>
                 ) : (
-                  <div className={styles.out}>out of stock</div>
+                 <p style={{
+                  margin: '40px 0px',
+                  fontSize: "20px",
+                  textAlign: "center"
+                 }}>Please Login To Buy A Kick</p>
                 )}
               </div>
             </div>

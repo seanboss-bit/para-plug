@@ -28,9 +28,13 @@ const Login = () => {
           email: username,
           password,
         });
-        dispatch(login(res.data));
-        setLoading(false);
-        toast.success(`Welcome ${res.data.fullName}`);
+        if (res.data.message === "A Confirmation Email Has Been Sent!!!") {
+          toast.info("A Confirmation Email Has Been Sent!!!");
+        } else {
+          dispatch(login(res.data));
+          setLoading(false);
+          toast.success(`Welcome ${res.data.fullName}`);
+        }
         if (res.data.isAdmin) {
           route.push("/admin");
         } else {

@@ -26,7 +26,7 @@ const Confirm = () => {
 
   useEffect(() => {
     verify();
-  }, [params]);
+  }, []);
   return (
     <div>
       {error ? <>AN ERROR OCUURED: INVALID LINK</> : <>REDIRECTING........</>}

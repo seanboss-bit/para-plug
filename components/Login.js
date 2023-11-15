@@ -25,7 +25,7 @@ const Login = () => {
     } else {
       try {
         const res = await publicRequest.post("/user/login", {
-          email: username,
+          email: username.toLowerCase(),
           password,
         });
         if (res.data.message === "A Confirmation Email Has Been Sent!!!") {
@@ -43,6 +43,7 @@ const Login = () => {
         console.log(res);
       } catch (error) {
         toast.error(error?.response?.data?.error);
+        setLoading(false)
         console.log(error);
       }
     }

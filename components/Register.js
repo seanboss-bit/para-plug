@@ -64,7 +64,7 @@ const Register = () => {
         const res = await publicRequest.post("/user", {
           fullName,
           ref,
-          email,
+          email: email.toLowerCase(),
           password,
           image: data.url,
           username,

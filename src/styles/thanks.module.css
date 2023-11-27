@@ -1,0 +1,23 @@
+.thanks img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+.thanks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 80px 0px;
+}
+.thanks a svg {
+  height: 20px;
+}
+.thanks a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+  text-decoration: none;
+}

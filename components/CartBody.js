@@ -20,6 +20,7 @@ import { toast } from "react-toastify";
 import { publicRequest } from "../requests";
 import { usePaystackPayment } from "react-paystack";
 import Loading from "./Loading";
+import { useRouter } from "next/navigation";
 
 const CartBody = () => {
   const products = useSelector((state) => state.cart.products);
@@ -36,6 +37,7 @@ const CartBody = () => {
   const [email, setEmail] = useState(user?.email);
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const router = useRouter();
   const remove = (item) => {
     dispatch(removeFromCart(item));
   };
@@ -58,9 +60,9 @@ const CartBody = () => {
       total: cart.total >= 150000 ? cart.total : cart.total + 3500,
     });
     toast.success(res.data.message);
+    router.push("/thanks");
     setLoading(false);
     dispatch(clear());
-    setPayment(0);
   };
   useEffect(() => {
     dispatch(getCartTotal());
@@ -80,6 +82,7 @@ const CartBody = () => {
 
   // you can call this function anything
   const onSuccess = (reference) => {
+    setPayment(0);
     makeOrder();
     console.log(reference);
   };
@@ -193,44 +196,23 @@ const CartBody = () => {
               <div className={styles.closebtn}>
                 <XMarkIcon onClick={() => setPayment(0)} />
               </div>
-              {/* <span className={styles.accwarning}>
-                please after payment make sure you send your payment receipt to
-                the whatsapp number just click on the whatsapp icon below
-              </span> */}
-              {/* <span className={styles.accwarning}>payment validates order</span> */}
               <span className={styles.pay}>
                 you are about to pay{" "}
                 {cart.total >= 150000
                   ? numberWithCommas(cart.total)
                   : numberWithCommas(cart.total + 3500)}
               </span>
-              {/* <div className={styles.accdetails}>
-                <div>
-                  <p>account name:</p>
-                  <span>nurudeen ibrahim opeyemi</span>
-                </div>
-                <div>
-                  <p>bank:</p>
-                  <span>united bank of africa (UBA)</span>
-                </div>
-                <div>
-                  <p>account number:</p>
-                  <span>2236242867</span>
-                </div>
-              </div> */}
               <form className={styles.userdata}>
                 <div>
                   <input
                     type="text"
                     placeholder="Enter Name"
                     value={user?.fullName}
-                    onChange={(e) => setName(e.target.value)}
                   />
                   <input
                     type="email"
                     placeholder="Enter Your Email"
                     value={user?.email}
-                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div>

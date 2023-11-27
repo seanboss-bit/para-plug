@@ -44,6 +44,26 @@ const Navbar = () => {
               <div className={styles.bars} onClick={() => setOpenNav(false)}>
                 <XMarkIcon />
               </div>
+              {user ? (
+                <div className={styles.userPres}>
+                  <Link href="/cart" className={styles.shopping}>
+                    <ShoppingCartIcon />
+                    {products?.length > 0 ? (
+                      <span>{products.length}</span>
+                    ) : null}
+                  </Link>
+                  <img
+                    src={user?.image}
+                    alt="user_img"
+                    onClick={() => router.push(`/dashboard/${user?._id}`)}
+                  />
+                </div>
+              ) : (
+                <div className={styles.resLog}>
+                  <Link href={"/login"}>login</Link>
+                  <Link href={"/register"}>register</Link>
+                </div>
+              )}
               <div className={styles.navlink}>
                 <Link
                   href="/store"
@@ -70,26 +90,7 @@ const Navbar = () => {
                   About Us
                 </Link>
               </div>
-              {user ? (
-                <div className={styles.userPres}>
-                  <Link href="/cart" className={styles.shopping}>
-                    <ShoppingCartIcon />
-                    {products?.length > 0 ? (
-                      <span>{products.length}</span>
-                    ) : null}
-                  </Link>
-                  <img
-                    src={user?.image}
-                    alt="user_img"
-                    onClick={() => router.push(`/dashboard/${user?._id}`)}
-                  />
-                </div>
-              ) : (
-                <div className={styles.resLog}>
-                  <Link href={"/login"}>login</Link>
-                  <Link href={"/register"}>register</Link>
-                </div>
-              )}
+
               <div className={styles.respic}>
                 <Image src={"/para.png"} height={100} width={100} />
               </div>

@@ -119,14 +119,22 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
-
+.new {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+.new p {
+  margin: 0;
+}
+.new a {
+  text-transform: capitalize;
+}
 @media screen and (max-width: 768px) {
   .loginFrame {
     grid-template-columns: 1fr;
     gap: 0px;
-  }
-  .main{
-    margin: 60px 0px;
   }
   .inner svg {
     display: block;
@@ -165,5 +173,12 @@
     padding: 10px;
     transition: 0.3s ease-in-out;
     z-index: 8;
+  }
+  .login {
+    width: 90%;
+  }
+  .main {
+    padding: 60px 0px;
+    height: fit-content;
   }
 }

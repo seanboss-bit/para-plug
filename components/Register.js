@@ -13,6 +13,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import Loading from "./Loading";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Register = () => {
   const [image, setImage] = useState(null);
@@ -172,6 +173,10 @@ const Register = () => {
         >
           register
         </button>
+        <div className={styles.new}>
+          <p>Got an account?</p>
+          <Link href={"/login"}>login</Link>
+        </div>
       </div>
     </div>
   );

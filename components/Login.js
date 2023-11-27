@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "@/redux/features/userReducer";
 import Loading from "./Loading";
+import Link from "next/link";
 
 const Login = () => {
   const route = useRouter();
@@ -30,6 +31,7 @@ const Login = () => {
         });
         if (res.data.message === "A Confirmation Email Has Been Sent!!!") {
           toast.info("A Confirmation Email Has Been Sent!!!");
+          setLoading(false);
         } else {
           dispatch(login(res.data));
           setLoading(false);
@@ -43,7 +45,7 @@ const Login = () => {
         console.log(res);
       } catch (error) {
         toast.error(error?.response?.data?.error);
-        setLoading(false)
+        setLoading(false);
         console.log(error);
       }
     }
@@ -85,6 +87,10 @@ const Login = () => {
         >
           login
         </button>
+        <div className={styles.new}>
+          <p>Don't have an account?</p>
+          <Link href={"/register"}>register</Link>
+        </div>
       </div>
     </div>
   );

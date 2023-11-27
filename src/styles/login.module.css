@@ -49,6 +49,7 @@
   border: none;
   padding: 10px;
   flex: 1;
+  width: 100%;
 }
 .loginBox input:focus ~ svg {
   color: #0084d6;
@@ -132,6 +133,9 @@
   text-transform: capitalize;
 }
 @media screen and (max-width: 768px) {
+  .loginBox{
+    width: 100%;
+  }
   .loginFrame {
     grid-template-columns: 1fr;
     gap: 0px;

@@ -13,9 +13,14 @@ const DashboardNav = () => {
 
   useEffect(() => {
     if (user === null) {
-      router.push("/login");
+      router.push("/");
     }
   }, [user]);
+
+  const out = () => {
+    dispatch(logout());
+    router.push("/");
+  };
   return (
     <div className={styles.navmain}>
       <div className="container">
@@ -27,7 +32,7 @@ const DashboardNav = () => {
               <span>let's get it</span>
             </div>
           </div>
-          <ArrowLeftOnRectangleIcon onClick={() => dispatch(logout())} />
+          <ArrowLeftOnRectangleIcon onClick={() => out()} />
         </div>
       </div>
     </div>

@@ -36,11 +36,11 @@ const Login = () => {
           dispatch(login(res.data));
           setLoading(false);
           toast.success(`Welcome ${res.data.fullName}`);
-        }
-        if (res.data.isAdmin) {
-          route.push("/admin");
-        } else {
-          route.push(`/dashboard/${res.data._id}`);
+          if (res.data.isAdmin) {
+            route.push("/admin");
+          } else {
+            route.push(`/dashboard/${res.data._id}`);
+          }
         }
         console.log(res);
       } catch (error) {

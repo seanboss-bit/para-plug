@@ -43,7 +43,7 @@ const Refferal = () => {
             your referrals <span>{refs.length}/10</span>
           </h3>
           <p>
-            your <span>seven</span> steps away from claiming a free sneaker
+            your <span>several</span> steps away from claiming a free sneaker
           </p>
 
           <div className={styles.progressBody}>

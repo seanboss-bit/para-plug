@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import styles from "../src/styles/showcase.module.css";
 import { motion } from "framer-motion";
 

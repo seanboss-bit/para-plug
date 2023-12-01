@@ -77,39 +77,6 @@ const AboutBody = () => {
             </p>
           </div>
         </div>
-        {/* <div className={styles.management}>
-          <h2>our management</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic,
-            quaerat quo voluptatum quod ea earum!
-          </p>
-          <div className={styles.staff}>
-            <div className={styles.staffbox}>
-              <img
-                src="https://paraplug.org/wp-content/uploads/2018/12/team4free-img.png"
-                alt="#"
-              />
-              <h6>name</h6>
-              <span>position</span>
-            </div>
-            <div className={styles.staffbox}>
-              <img
-                src="https://paraplug.org/wp-content/uploads/2018/12/team4free-img.png"
-                alt="#"
-              />
-              <h6>name</h6>
-              <span>position</span>
-            </div>
-            <div className={styles.staffbox}>
-              <img
-                src="https://paraplug.org/wp-content/uploads/2018/12/team4free-img.png"
-                alt="#"
-              />
-              <h6>name</h6>
-              <span>position</span>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

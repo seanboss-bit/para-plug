@@ -14,15 +14,6 @@ const SingleShoe = () => {
   const id = useParams();
   const router = useRouter();
   const [updatedKicks, setUpadatedKick] = useState({});
-  // const [name, setName] = useState("");
-  // const [mainImg, setMainImg] = useState([]);
-  // const [price, setPrice] = useState("");
-  // const [slashPrice, setSlashPrice] = useState("");
-  // const [category, setCategory] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [extraImg, setExtraImg] = useState([]);
-  // const [freeShipping, setFreeShipping] = useState(false);
-  // const [inStock, setInStock] = useState(true);
   const [size, setSize] = useState([]);
 
   const kicksValue = (e) => {

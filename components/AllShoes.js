@@ -11,10 +11,6 @@ const AllShoes = () => {
     try {
       const res = await publicRequest.get("/product");
       setShowShoe(res.data.allKicks);
-      dispatch(addShoe(res.data.allKicks));
-      if (res.data) {
-        setLoading(false);
-      }
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +23,7 @@ const AllShoes = () => {
     <div>
       <div className={styles.results}>
         {showShoe.map((product) => (
-          <Link href={`/shoes/${product._id}`} className={styles.subresult}>
+          <Link href={`/shoes/${product._id}`} className={styles.subresult} key={product._id}>
             <img src={product.image} alt="#" />
             <p>{product.name}</p>
           </Link>

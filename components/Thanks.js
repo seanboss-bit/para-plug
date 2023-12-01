@@ -14,7 +14,6 @@ const Thanks = () => {
           <h2>Thank You For shopping with us</h2>
           <p>Enjoy your new sneakers</p>
           <Link href={"/"}>
-            {" "}
             <ArrowLeftIcon /> return to home
           </Link>
         </div>

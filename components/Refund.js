@@ -11,11 +11,6 @@ const Refund = () => {
         <span>process to return package</span>
         <div className={styles.two}>
           <div className={styles.address}>
-            {/* <div className={styles.addressbox}>
-              <h6>Location:</h6>
-              <p>No 1 Jaba shopping complex, panisau road, Kano state.</p>
-              <p>Federal secretariat along Airport road.</p>
-            </div> */}
             <div className={styles.addressbox}>
               <h6>email:</h6>
               <p>paraplugs@gmail.com</p>

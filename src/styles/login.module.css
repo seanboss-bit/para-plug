@@ -69,6 +69,12 @@
   background: none;
   color: #0084d6;
 }
+.innermain {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
 .inner {
   display: flex;
   align-items: center;
@@ -97,9 +103,7 @@
   align-items: center;
   gap: 30px;
 }
-.innermain {
-  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-}
+
 .links a {
   text-transform: capitalize !important;
   margin: 0px 15px;
@@ -133,7 +137,7 @@
   text-transform: capitalize;
 }
 @media screen and (max-width: 768px) {
-  .loginBox{
+  .loginBox {
     width: 100%;
   }
   .loginFrame {
@@ -145,12 +149,12 @@
     height: 20px;
   }
   .innermain {
-    position: relative;
+    position: sticky;
     z-index: 10;
   }
   .links {
     position: absolute;
-    bottom: -150%;
+    bottom: -200%;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -184,5 +188,8 @@
   .main {
     padding: 60px 0px;
     height: fit-content;
+  }
+  .username{
+    display: none;
   }
 }

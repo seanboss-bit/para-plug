@@ -35,26 +35,32 @@ const page = () => {
           <Loading />
         ) : (
           <div className={styles.orderbody}>
-            {allOrders.map((order) => (
-              <Link
-                href={`/orders/${order?._id}`}
-                key={order?._id}
-                className={styles.order}
-              >
-                <div className={styles.name}>
-                  <p>new order from {order?.name}</p>
-                  <span>on {order?.createdAt}</span>
-                </div>
-                <div className={styles.orderend}>
-                  {order?.completed ? null : <div className={styles.dot}></div>}
-                  {order?.completed ? (
-                    <p>order completed</p>
-                  ) : (
-                    <p>order not completed</p>
-                  )}
-                </div>
-              </Link>
-            ))}
+            {allOrders.length > 0 ? (
+              allOrders.map((order) => (
+                <Link
+                  href={`/orders/${order?._id}`}
+                  key={order?._id}
+                  className={styles.order}
+                >
+                  <div className={styles.name}>
+                    <p>new order from {order?.name}</p>
+                    <span>on {order?.createdAt}</span>
+                  </div>
+                  <div className={styles.orderend}>
+                    {order?.completed ? null : (
+                      <div className={styles.dot}></div>
+                    )}
+                    {order?.completed ? (
+                      <p>order completed</p>
+                    ) : (
+                      <p>order not completed</p>
+                    )}
+                  </div>
+                </Link>
+              ))
+            ) : (
+              <p>NO NEW ORDERS</p>
+            )}
           </div>
         )}
       </div>

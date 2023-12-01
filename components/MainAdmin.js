@@ -10,6 +10,7 @@ const MainAdmin = () => {
   const getSubscribers = async () => {
     try {
       const res = await publicRequest.get("/email");
+      console.log(res)
       setEmails(res.data.allEmail);
     } catch (error) {
       console.log(error);
@@ -34,7 +35,7 @@ const MainAdmin = () => {
         <div className={styles.emailsuscribers}>
           <h4>Email Subscribers</h4>
           {emails.map((email) => (
-            <p key={email.id}>{email.email}</p>
+            <p key={email._id}>{email.email}</p>
           ))}
         </div>
         <div className={styles.contact}>

@@ -76,8 +76,8 @@ const CartBody = () => {
     amount:
       cart.total >= 150000 ? cart.total * 100 : cart.total * 100 + 3500 * 100,
 
-    publicKey: "pk_test_57fa1e02ffb5765c3aaa7c812852a52739366451",
-    // publicKey: "pk_live_ac6b008808fcabb5ad2b4fe75792b852672127dc",
+    // publicKey: "pk_test_57fa1e02ffb5765c3aaa7c812852a52739366451",
+    publicKey: "pk_live_ac6b008808fcabb5ad2b4fe75792b852672127dc",
   };
 
   // you can call this function anything

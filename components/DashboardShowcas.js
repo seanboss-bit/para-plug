@@ -8,7 +8,14 @@ const DashboardShowcas = () => {
     <div className={styles.showcasemain}>
       <div className="container">
         <h2>Welcome, {user?.fullName}</h2>
-        <a href="/store">return to store?</a>
+        {user.isAdmin ? (
+          <>
+            <a href="/store">return to store?</a>
+            <a href="/admin">return to Admin?</a>
+          </>
+        ) : (
+          <a href="/store">return to store?</a>
+        )}
       </div>
     </div>
   );

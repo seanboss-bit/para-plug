@@ -29,6 +29,10 @@ const DashboardNav = () => {
             <img src={user?.image} alt="user_img" />
             <div>
               <p>{user?.username}</p>
+              <p style={{
+                textTransform: 'lowerCase',
+                fontSize: '13px'
+              }}>{user?.email}</p>
               <span>let's get it</span>
             </div>
           </div>

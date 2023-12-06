@@ -119,7 +119,7 @@ const CartBody = () => {
               {products.map((product) => (
                 <div className={styles.cartItem} key={product._id}>
                   <div className={styles.cartproduct}>
-                    <img src={product.image} alt="#" />
+                    <img src={product.image} alt="shoe_image" />
                     <div>
                       <h3>{product.name}</h3>
                       <p>{product.category}</p>
@@ -230,7 +230,7 @@ const CartBody = () => {
               <button className={styles.done} onClick={() => toPay()}>
                 <img
                   src="https://static-00.iconduck.com/assets.00/paystack-icon-512x504-w7v8l6as.png"
-                  alt="#"
+                  alt="shoe_image"
                 />
                 order kicks now
               </button>

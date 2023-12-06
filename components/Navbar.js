@@ -37,7 +37,12 @@ const Navbar = () => {
             </div>
           )}
           <Link href="/" className={styles.imgcont}>
-            <Image src="/head.png" alt="#" width={100} height={100} />
+            <Image
+              src="/head.png"
+              alt="header_image"
+              width={100}
+              height={100}
+            />
           </Link>
           <div className={styles.res}>
             <div className={openNav ? styles.reslink : styles.links}>
@@ -116,7 +121,12 @@ const Navbar = () => {
               </div>
 
               <div className={styles.respic}>
-                <Image src={"/para.png"} height={100} width={100} />
+                <Image
+                  src={"/para.png"}
+                  height={100}
+                  width={100}
+                  alt="paraplug"
+                />
               </div>
             </div>
             {user ? (

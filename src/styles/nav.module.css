@@ -11,6 +11,7 @@
   z-index: 98;
   transition: all 0.3s ease-in-out;
   background: #fff;
+  padding: 40px 0px;
 }
 .mainnav2 {
   position: fixed;
@@ -20,6 +21,7 @@
   z-index: 98;
   transition: all 0.3s ease-in-out;
   background: #fff;
+  padding: 40px 0px;
 }
 .navinner {
   display: flex;
@@ -84,6 +86,10 @@
 .respic {
   display: none;
 }
+.respic img {
+  height: auto;
+  width: auto;
+}
 .userPres {
   display: flex;
   gap: 10px;
@@ -114,6 +120,10 @@
 .resLog a:hover {
   background: transparent;
   color: #0084d6;
+}
+.imgcont img {
+  height: auto;
+  width: auto;
 }
 @media screen and (max-width: 1200px) {
   .small {

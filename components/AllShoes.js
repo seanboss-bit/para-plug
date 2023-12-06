@@ -24,7 +24,7 @@ const AllShoes = () => {
       <div className={styles.results}>
         {showShoe.map((product) => (
           <Link href={`/shoes/${product._id}`} className={styles.subresult} key={product._id}>
-            <img src={product.image} alt="#" />
+            <img src={product.image} alt="shoe_image" />
             <p>{product.name}</p>
           </Link>
         ))}

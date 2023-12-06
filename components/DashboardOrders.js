@@ -19,7 +19,6 @@ const DashboardOrders = () => {
     setLoading(true);
     try {
       const res = await publicRequest.get(`/order/user/find/${user._id}`);
-      console.log(res);
       setLoading(false);
       setOrders(res.data.order);
     } catch (error) {

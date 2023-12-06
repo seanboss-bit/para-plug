@@ -11,7 +11,7 @@ const Result = ({ img, name, cat, price, slash, id, stock, item }) => {
       className={styles.shoecontainer}
       variants={item}
     >
-      <img src={img} alt="#" />
+      <img src={img} alt="shoe_image" />
       <h4 className={styles.shoename}>{name}</h4>
       <p className={styles.shoecat}>{cat}</p>
       <p className={styles.shoeprice}>NGN {numberWithCommas(price)}</p>

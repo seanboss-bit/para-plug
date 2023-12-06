@@ -10,7 +10,6 @@ const MainAdmin = () => {
   const getSubscribers = async () => {
     try {
       const res = await publicRequest.get("/email");
-      console.log(res)
       setEmails(res.data.allEmail);
     } catch (error) {
       console.log(error);
@@ -19,7 +18,6 @@ const MainAdmin = () => {
   const getMessages = async () => {
     try {
       const res = await publicRequest.get("/customer");
-      console.log(res);
       setMessages(res.data.allCustomer);
     } catch (error) {
       console.log(error);

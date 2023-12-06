@@ -5,6 +5,7 @@ import { publicRequest } from "../requests";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import { toast } from "react-toastify";
+import Moment from "react-moment";
 const Users = () => {
   const router = useRouter();
   const [users, setUsers] = useState([]);
@@ -49,7 +50,7 @@ const Users = () => {
                 <div className={styles.box} key={user._id}>
                   <img src={user.image} alt="#user_img" />
                   <p>{user?.fullName}</p>
-                  <span>joined 20th december 2023</span>
+                  <span>joined {<Moment date={user?.createdAt} format="DD MMMM yyyy"/>}</span>
                   <div className={styles.btnbox}>
                     {user.isAdmin ? (
                       <button

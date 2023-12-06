@@ -59,7 +59,7 @@ const Product = () => {
           <Loading loading={loading} />
         ) : (
           <>
-            <Link href={'/store'} className={styles.back}>
+            <Link href={"/store"} className={styles.back}>
               <ArrowUturnLeftIcon />
               <span>back</span>
             </Link>
@@ -67,7 +67,7 @@ const Product = () => {
               <div className={styles.productimages}>
                 <img
                   src={bigimg === undefined ? singleItem?.image : bigimg}
-                  alt="#"
+                  alt="main_image"
                   className={styles.mainimg}
                 />
                 <div className={styles.subimages}>
@@ -77,8 +77,7 @@ const Product = () => {
                       width={100}
                       height={100}
                       src={img}
-                      alt="#"
-                      objectFit="contain"
+                      alt="shoe_image"
                       onClick={() => activePic(i)}
                       className={
                         singleItem?.extraImg[i] === bigimg
@@ -102,7 +101,7 @@ const Product = () => {
                         NGN {numberWithCommas(singleItem?.slashPrice)}
                       </span>
                     ) : null}
-                    <p>NGN {numberWithCommas(singleItem?.price)}</p>
+                    <span>NGN {numberWithCommas(singleItem?.price)}</span>
                     {singleItem?.freeShipping ? (
                       <span>+ free shipping</span>
                     ) : null}

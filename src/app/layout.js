@@ -3,7 +3,6 @@ import { Providers } from "../redux/provider";
 import Whatsapp from "../../components/Whatsapp";
 import { Poppins } from "next/font/google";
 
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -39,7 +38,7 @@ export default function RootLayout({ children }) {
           referrerPolicy="no-referrer"
         />{" "}
       </head>
-      <body className={poppins.className}>
+      <body className={poppins.className} suppressHydrationWarning={true}>
         <Providers>{children}</Providers>
         <Whatsapp />
       </body>

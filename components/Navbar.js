@@ -37,11 +37,21 @@ const Navbar = () => {
             </div>
           )}
           <Link href="/" className={styles.imgcont}>
+            <img
+              src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Christmas-PNG/Mistletoe_PNG_Transparent_Clipart.png?m=1639128933"
+              alt="#"
+              className={styles.no}
+            />
             <Image
               src="/head.png"
               alt="header_image"
               width={100}
               height={100}
+            />
+            <img
+              src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Christmas-PNG/Mistletoe_PNG_Transparent_Clipart.png?m=1639128933"
+              alt="#"
+              className={styles.no}
             />
           </Link>
           <div className={styles.res}>

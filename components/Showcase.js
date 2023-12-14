@@ -16,9 +16,14 @@ const Showcase = () => {
               opacity: 1,
               y: 0,
             }}
-            transition={{ duration: .9, ease: "easeInOut" }}
+            transition={{ duration: 0.9, ease: "easeInOut" }}
           >
-            Para Plug
+            <img
+              src="https://www.bigbasket.com/media/uploads/p/xxl/40185475_2-pahal-christmas-santa-hat-for-kids-small.jpg"
+              alt="IMG"
+              className={styles.christma}
+            />
+            <span>Para Plug</span>
           </motion.h1>
           <motion.h4
             initial={{

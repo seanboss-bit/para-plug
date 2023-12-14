@@ -1,6 +1,6 @@
 .main {
   min-height: 70vh;
-  background: url("../../public/chris.jpg");
+  background: url("../../public/1.png");
   background-size: cover !important;
   position: relative !important;
   background-position: center center !important;
@@ -33,6 +33,7 @@
   font-size: 90px;
   font-weight: 600;
   letter-spacing: 3px;
+  position: relative;
 }
 .inner a {
   text-transform: uppercase;
@@ -48,9 +49,21 @@
   background: #000;
   color: #fff;
 }
+.inner span {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.christma {
+  width: 60px;
+  position: absolute;
+  left: -4.5%;
+  z-index: 0;
+}
+
 @media screen and (max-width: 768px) {
-  .main{
-    background: url("../../public/para3.jpg") center center no-repeat scroll !important;
+  .main {
+    background: url("../../public/1.png") center center no-repeat scroll !important;
   }
   .inner {
     text-align: center;
@@ -60,5 +73,10 @@
   }
   .main {
     height: 85vh;
+  }
+  .christma{
+    width: 50px;
+    left: -10%;
+    top: -25%;
   }
 }

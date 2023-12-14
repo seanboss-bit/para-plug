@@ -125,6 +125,14 @@
   height: auto;
   width: auto;
 }
+.imgcont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.no {
+  width: 40px !important;
+}
 @media screen and (max-width: 1200px) {
   .small {
     display: block;
@@ -242,6 +250,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
   }
   .bars svg {
     padding: 0 15px;

@@ -65,15 +65,13 @@
   .main {
     background: url("../../public/1.png") center center no-repeat scroll !important;
     background-size: cover;
+    height: 80vh;
   }
   .inner {
     text-align: center;
   }
   .inner h1 {
     font-size: 50px;
-  }
-  .main {
-    height: 85vh;
   }
   .christma{
     width: 50px;

@@ -64,6 +64,7 @@
 @media screen and (max-width: 768px) {
   .main {
     background: url("../../public/1.png") center center no-repeat scroll !important;
+    background-size: cover;
   }
   .inner {
     text-align: center;

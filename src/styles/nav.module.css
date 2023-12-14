@@ -26,7 +26,7 @@
 .navinner {
   display: flex;
   align-items: center;
-  gap: 180px;
+  gap: 10px;
 }
 .navinner a {
   color: #000;

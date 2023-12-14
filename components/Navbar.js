@@ -38,7 +38,7 @@ const Navbar = () => {
           )}
           <Link href="/" className={styles.imgcont}>
             <img
-              src="https://images.vexels.com/media/users/3/219178/isolated/preview/6db20cc21e7d1c713c36ea101c567805-mistletoe-branch-illustration.png"
+              src="https://res.cloudinary.com/dvo4tlcrx/image/upload/v1702572758/ms_1_bzduug.png"
               alt="#"
               className={styles.no}
             />
@@ -49,7 +49,7 @@ const Navbar = () => {
               height={100}
             />
             <img
-              src="https://images.vexels.com/media/users/3/219178/isolated/preview/6db20cc21e7d1c713c36ea101c567805-mistletoe-branch-illustration.png"
+              src="https://res.cloudinary.com/dvo4tlcrx/image/upload/v1702572758/ms_1_bzduug.png"
               alt="#"
               className={styles.no}
             />

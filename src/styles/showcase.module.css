@@ -1,6 +1,6 @@
 .main {
   min-height: 70vh;
-  background: url("../../public/1.png");
+  background: url("../../public/him.png");
   background-size: cover !important;
   position: relative !important;
   background-position: center center !important;
@@ -57,13 +57,14 @@
 .christma {
   width: 60px;
   position: absolute;
-  left: -4.5%;
+  left: -6.8%;
+  top: -4.5%;
   z-index: 0;
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    background: url("../../public/1.png") center center no-repeat scroll !important;
+    background: url("../../public/him.png") center center no-repeat scroll !important;
     background-size: cover;
     height: 80vh;
   }

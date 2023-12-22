@@ -13,13 +13,14 @@ const StoreBody = () => {
   const [loading, setLoading] = useState(false);
   const shoes = useSelector((state) => state.shoe.shoes);
   const [showShoe, setShowShoe] = useState([]);
+  const [skip, setSkip] = useState(0);
   const dispatch = useDispatch();
 
   const getAllShoes = async () => {
     setLoading(true);
     try {
-      const res = await publicRequest.get("/product");
-      setShowShoe(res.data.allKicks);
+      const res = await publicRequest.get(`/product?skip=${skip}`);
+      setShowShoe([...showShoe, ...res.data.allKicks]);
       dispatch(addShoe(res.data.allKicks));
       if (res.data) {
         setLoading(false);
@@ -31,7 +32,7 @@ const StoreBody = () => {
 
   useEffect(() => {
     getAllShoes();
-  }, []);
+  }, [skip]);
 
   const [category, setCategory] = useState("all");
 
@@ -74,6 +75,25 @@ const StoreBody = () => {
       })
     );
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop + 2 >=
+        document.documentElement.scrollHeight
+      ) {
+        setSkip((prev) => prev + 12);
+      }
+    });
+    window.removeEventListener("scroll", () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop + 100 >=
+        document.documentElement.scrollHeight
+      ) {
+        setSkip((prev) => prev + 8);
+      }
+    });
+  }, []);
 
   const container = {
     show: {
@@ -133,30 +153,28 @@ const StoreBody = () => {
         </div>
       </div>
       <div className="container">
-        {loading ? (
-          <Loading />
-        ) : (
-          <motion.div
-            className={styles.results}
-            initial="hidden"
-            animate="show"
-            variants={container}
-          >
-            {showShoe.map((product) => (
-              <Result
-                img={product?.image}
-                name={product?.name}
-                cat={product?.category}
-                price={product?.price}
-                slash={product?.slashPrice}
-                id={product?._id}
-                key={product?._id}
-                stock={product?.inStock}
-                item={item}
-              />
-            ))}
-          </motion.div>
-        )}
+        {loading && <Loading />}
+
+        <motion.div
+          className={styles.results}
+          initial="hidden"
+          animate="show"
+          variants={container}
+        >
+          {showShoe.map((product) => (
+            <Result
+              img={product?.image}
+              name={product?.name}
+              cat={product?.category}
+              price={product?.price}
+              slash={product?.slashPrice}
+              id={product?._id}
+              key={product?._id}
+              stock={product?.inStock}
+              item={item}
+            />
+          ))}
+        </motion.div>
       </div>
     </div>
   );

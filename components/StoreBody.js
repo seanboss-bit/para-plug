@@ -79,7 +79,7 @@ const StoreBody = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
-        window.innerHeight + document.documentElement.scrollTop + 2 >=
+        window.innerHeight + document.documentElement.scrollTop + 20 >=
         document.documentElement.scrollHeight
       ) {
         setSkip((prev) => prev + 12);
@@ -87,7 +87,7 @@ const StoreBody = () => {
     });
     window.removeEventListener("scroll", () => {
       if (
-        window.innerHeight + document.documentElement.scrollTop + 100 >=
+        window.innerHeight + document.documentElement.scrollTop + 20 >=
         document.documentElement.scrollHeight
       ) {
         setSkip((prev) => prev + 8);

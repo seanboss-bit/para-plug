@@ -9,7 +9,7 @@ const AllShoes = () => {
   const [showShoe, setShowShoe] = useState([]);
   const getAllShoes = async () => {
     try {
-      const res = await publicRequest.get("/product");
+      const res = await publicRequest.get("/product/admin/kicks");
       setShowShoe(res.data.allKicks);
     } catch (error) {
       console.log(error);

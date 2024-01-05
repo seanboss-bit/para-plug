@@ -11,7 +11,6 @@
   z-index: 98;
   transition: all 0.3s ease-in-out;
   background: #fff;
-  padding: 40px 0px;
 }
 .mainnav2 {
   position: fixed;
@@ -21,12 +20,11 @@
   z-index: 98;
   transition: all 0.3s ease-in-out;
   background: #fff;
-  padding: 40px 0px;
 }
 .navinner {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 180px;
 }
 .navinner a {
   color: #000;
@@ -86,10 +84,6 @@
 .respic {
   display: none;
 }
-.respic img {
-  height: auto;
-  width: auto;
-}
 .userPres {
   display: flex;
   gap: 10px;
@@ -120,18 +114,6 @@
 .resLog a:hover {
   background: transparent;
   color: #0084d6;
-}
-.imgcont img {
-  height: auto;
-  width: auto;
-}
-.imgcont {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.no {
-  width: 40px !important;
 }
 @media screen and (max-width: 1200px) {
   .small {
@@ -250,7 +232,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
   }
   .bars svg {
     padding: 0 15px;

@@ -37,21 +37,11 @@ const Navbar = () => {
             </div>
           )}
           <Link href="/" className={styles.imgcont}>
-            <img
-              src="https://res.cloudinary.com/dvo4tlcrx/image/upload/v1702572758/ms_1_bzduug.png"
-              alt="#"
-              className={styles.no}
-            />
             <Image
               src="/head.png"
               alt="header_image"
               width={100}
               height={100}
-            />
-            <img
-              src="https://res.cloudinary.com/dvo4tlcrx/image/upload/v1702572758/ms_1_bzduug.png"
-              alt="#"
-              className={styles.no}
             />
           </Link>
           <div className={styles.res}>

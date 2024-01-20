@@ -15,16 +15,27 @@ const StoreBody = () => {
   const [showShoe, setShowShoe] = useState([]);
   const [skip, setSkip] = useState(0);
   const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState("");
+  const [category, setCategory] = useState("all");
+  const [latest, setLatest] = useState("newest");
 
   const getAllShoes = async () => {
     setLoading(true);
     try {
       const res = await publicRequest.get(`/product?skip=${skip}`);
       setShowShoe([...showShoe, ...res.data.allKicks]);
-      dispatch(addShoe(res.data.allKicks));
       if (res.data) {
         setLoading(false);
       }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const getAllShoes2 = async () => {
+    setLoading(true);
+    try {
+      const res = await publicRequest.get("/product/admin/kicks");
+      dispatch(addShoe(res.data.allKicks));
     } catch (error) {
       console.log(error);
     }
@@ -34,11 +45,9 @@ const StoreBody = () => {
     getAllShoes();
   }, [skip]);
 
-  const [category, setCategory] = useState("all");
-
-  const [latest, setLatest] = useState("newest");
-
-  const [searchValue, setSearchValue] = useState("");
+  useEffect(() => {
+    getAllShoes2();
+  }, []);
 
   useEffect(() => {
     if (category === "all") {
@@ -79,18 +88,14 @@ const StoreBody = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
-        window.innerHeight + document.documentElement.scrollTop + 20 >=
+        window.innerHeight + document.documentElement.scrollTop + 1 >=
         document.documentElement.scrollHeight
       ) {
-        setSkip((prev) => prev + 12);
-      }
-    });
-    window.removeEventListener("scroll", () => {
-      if (
-        window.innerHeight + document.documentElement.scrollTop + 20 >=
-        document.documentElement.scrollHeight
-      ) {
-        setSkip((prev) => prev + 8);
+        if (searchValue === "") {
+          setTimeout(() => {
+            setSkip((prev) => prev + 12);
+          }, 500);
+        }
       }
     });
   }, []);
@@ -117,7 +122,7 @@ const StoreBody = () => {
   return (
     <div className={styles.store}>
       <div className={styles.vidcontainer}>
-        <video src="/banner.mp4" autoPlay loop controls={false} />
+        <video src="/banner.mp4" autoPlay loop controls={false} muted />
       </div>
       <div className={styles.filters}>
         <div className="container">
@@ -127,7 +132,6 @@ const StoreBody = () => {
                 type="text"
                 placeholder="Search Here...."
                 onChange={(e) => {
-                  e.preventDefault();
                   setSearchValue(e.target.value);
                 }}
               />

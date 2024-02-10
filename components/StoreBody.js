@@ -88,7 +88,7 @@ const StoreBody = () => {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (
-        window.innerHeight + document.documentElement.scrollTop + 1 >=
+        window.innerHeight + document.documentElement.scrollTop + 2 >=
         document.documentElement.scrollHeight
       ) {
         if (searchValue === "") {

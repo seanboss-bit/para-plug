@@ -101,7 +101,7 @@ const Product = () => {
                         NGN {numberWithCommas(singleItem?.slashPrice)}
                       </span>
                     ) : null}
-                    <span>NGN {numberWithCommas(singleItem?.price)}</span>
+                    <p>NGN {numberWithCommas(singleItem?.price)}</p>
                     {singleItem?.freeShipping ? (
                       <span>+ free shipping</span>
                     ) : null}

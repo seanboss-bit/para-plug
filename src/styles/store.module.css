@@ -112,4 +112,11 @@
   .filtersearch {
     width: 100%;
   }
+  .results{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .shoename{
+    text-transform: capitalize;
+    font-size: 15px;
+  }
 }

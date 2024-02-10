@@ -121,9 +121,6 @@ const StoreBody = () => {
 
   return (
     <div className={styles.store}>
-      <div className={styles.vidcontainer}>
-        <video src="/banner.mp4" autoPlay loop controls={false} muted />
-      </div>
       <div className={styles.filters}>
         <div className="container">
           <div className={styles.filterInner}>

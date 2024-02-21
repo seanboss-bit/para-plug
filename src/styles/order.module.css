@@ -21,7 +21,7 @@
 .dot {
   width: 20px;
   height: 20px;
-  background-color: #0084d6;
+  background-color: #000;
   border-radius: 50%;
   margin-bottom: 8px;
 }
@@ -142,7 +142,7 @@
   margin-right: 10px;
   text-transform: capitalize;
   padding: 8px 25px;
-  background: #0084d6;
+  background: #000;
   color: #fff;
   outline: none;
   border: none;

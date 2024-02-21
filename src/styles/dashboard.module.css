@@ -222,7 +222,7 @@
 }
 
 .refBody h3 span {
-  color: #0084d6;
+  color: #000;
   font-weight: bold;
 }
 
@@ -230,7 +230,7 @@
   text-transform: capitalize;
 }
 .refBody p span {
-  color: #0084d6;
+  color: #000;
 }
 
 .refBar {
@@ -258,7 +258,7 @@
 }
 .shareMain {
   text-transform: capitalize;
-  color: #0084d6;
+  color: #000;
 }
 
 .shareLink span {
@@ -280,7 +280,7 @@
 }
 
 .link span {
-  color: #0084d6;
+  color: #000;
   font-size: 18px;
 }
 
@@ -290,22 +290,22 @@
   gap: 10px;
   text-transform: capitalize;
   padding: 10px 30px;
-  background: #0084d6;
+  background: #000;
   color: #fff;
-  border: 2px solid #0084d6;
+  border: 2px solid #000;
   border-radius: 10px;
   transition: 0.3s ease-in-out;
 }
 
 .link button:hover {
   background: transparent;
-  color: #0084d6;
+  color: #000;
 }
 
 .socialBox {
   background: #f3f8ff;
   padding: 20px;
-  color: #0084d6;
+  color: #000;
   font-size: 35px;
   font-weight: bold;
   border-radius: 10px;

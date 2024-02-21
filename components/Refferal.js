@@ -51,7 +51,7 @@ const Refferal = () => {
               <div
                 className={styles.progressBar}
                 style={{
-                  background: "#0084d6",
+                  background: "#000",
                   width: `${(refs.length / 10) * 100}%`,
                   height: "100%",
                 }}

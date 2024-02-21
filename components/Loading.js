@@ -6,7 +6,7 @@ const Loading = ({ loading }) => {
     <div className={styles.main}>
       <ClipLoader
         loading={loading}
-        color="#0084d6"
+        color="#000"
         size={150}
         aria-label="Loading Spinner"
         data-testid="loader"

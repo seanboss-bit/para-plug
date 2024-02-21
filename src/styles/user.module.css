@@ -15,7 +15,7 @@
   padding: 10px;
   outline: none;
   border: none;
-  border-bottom: 2px solid #0084d6;
+  border-bottom: 2px solid #000;
 }
 .bottom {
   margin-top: 40px;
@@ -69,7 +69,7 @@
   background: green;
 }
 .box button:last-child {
-  background: #0084d6;
+  background: #000;
 }
 .re {
   background: red !important;
@@ -140,7 +140,7 @@
 .refheading {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  border-bottom: 2px solid #0084d6;
+  border-bottom: 2px solid #000;
   padding-bottom: 10px;
   margin-bottom: 0;
 }
@@ -159,7 +159,7 @@
 .reflist ol {
   padding: 10px 0px;
   text-transform: capitalize;
-  border-bottom: 2px solid #0084d6;
+  border-bottom: 2px solid #000;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }

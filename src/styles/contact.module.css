@@ -24,18 +24,18 @@
 }
 .inputBox input:focus,
 .inputBox textarea:focus {
-  border-bottom: 2px solid #0084d6;
+  border-bottom: 2px solid #000;
   transition: 0.3s ease;
   outline: none;
 }
 .inputBox input:focus ~ label,
 .inputBox textarea:focus ~ label {
-  color: #0084d6;
+  color: #000;
 }
 
 .btn {
   text-transform: capitalize;
-  background: #0084d6;
+  background: #000;
   color: #fff;
   border: none;
   padding: 10px 30px;

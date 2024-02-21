@@ -125,7 +125,7 @@
   width: 100%;
   text-transform: capitalize;
   margin: 20px 0px;
-  background: #0084d6;
+  background: #000;
   color: #fff;
   border: none;
   outline: none;
@@ -214,7 +214,7 @@
   padding: 10px;
   outline: none;
   border: none;
-  border-bottom: 1px solid #0084d6;
+  border-bottom: 1px solid #000;
 }
 .userdata div {
   display: grid;
@@ -231,7 +231,7 @@
   outline: none;
   padding: 10px;
   color: #fff;
-  background: #0084d6;
+  background: #000;
   text-transform: uppercase;
   font-weight: 500;
   border: none;

@@ -142,7 +142,7 @@ const Product = () => {
                         fontSize: "20px",
                         textAlign: "center",
                         cursor: "pointer",
-                        background: "#0084d6",
+                        background: "#000",
                         color: "#fff",
                         padding: "10px",
                       }}

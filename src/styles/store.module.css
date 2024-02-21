@@ -26,12 +26,12 @@
   outline: none;
   background: none;
   border: none;
-  border-bottom: 2px solid #0084d6;
+  border-bottom: 2px solid #000;
 }
 .filtersearch button {
   padding: 8px 10px;
   border: none;
-  background: #0084d6;
+  background: #000;
   color: #fff;
 }
 .cat select,
@@ -40,7 +40,7 @@
   text-transform: capitalize;
   padding: 8px 12px;
   border: none;
-  border-bottom: 1px solid #0084d6;
+  border-bottom: 1px solid #000;
   outline: none;
 }
 .shoecontainer {

@@ -122,7 +122,7 @@ const Navbar = () => {
 
               <div className={styles.respic}>
                 <Image
-                  src={"/para.png"}
+                  src="/para.png"
                   height={100}
                   width={100}
                   alt="paraplug"

@@ -53,6 +53,7 @@
   margin-bottom: 10px;
   border-radius: 10px;
   padding: 20px;
+  position: relative;
 }
 
 .shoename {
@@ -69,7 +70,7 @@
 }
 .shoeprice {
   font-weight: 700;
-  font-size: 19px;
+  font-size: 12px;
   margin-bottom: 0px;
 }
 .slash {
@@ -108,14 +109,25 @@
   width: 100%;
   margin-bottom: 40px;
 }
+.new {
+  position: absolute;
+  left: 0;
+  top: 2%;
+  font-weight: 700;
+  z-index: 20;
+  background: red;
+  padding:5px 20px;
+  text-transform: uppercase;
+  color: #fff;
+}
 @media screen and (max-width: 768px) {
   .filtersearch {
     width: 100%;
   }
-  .results{
-    grid-template-columns: repeat(2,1fr);
+  .results {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .shoename{
+  .shoename {
     text-transform: capitalize;
     font-size: 15px;
   }

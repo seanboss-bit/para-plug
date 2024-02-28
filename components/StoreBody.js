@@ -175,6 +175,7 @@ const StoreBody = () => {
               id={product?._id}
               key={product?._id}
               stock={product?.inStock}
+              dateAdded={product?.createdAt}
               item={item}
             />
           ))}

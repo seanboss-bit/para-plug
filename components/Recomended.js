@@ -10,7 +10,7 @@ const Recomended = () => {
   const [kicks, setKicks] = useState([]);
   const getRandom = async () => {
     try {
-      const res = await publicRequest.get("/product");
+      const res = await publicRequest.get("/product/admin/kicks");
       let lastSale = res.data.allKicks.filter((item) => {
         if (item.slashPrice) {
           return item;

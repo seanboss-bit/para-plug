@@ -118,6 +118,16 @@
   text-transform: uppercase;
   padding: 10px 0px;
 }
+.stockX{
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  background: #006340;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 10px 30px;
+  text-align: center;
+}
 
 @media screen and (max-width: 1200px) {
   .back{

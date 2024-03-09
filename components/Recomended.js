@@ -53,7 +53,7 @@ const Recomended = () => {
         <motion.div
           variants={container}
           initial="hidden"
-          whileInView="show"
+          animate="show"
           className={styles.recommend}
           viewport={{once: true, amount:0.25}}
         >

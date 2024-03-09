@@ -153,6 +153,15 @@ const Product = () => {
                       Please Login To Buy A Kick
                     </p>
                   )}
+                  {singleItem?.stockX && (
+                    <a
+                      href={singleItem?.stockX}
+                      className={styles.stockX}
+                      target="_blank"
+                    >
+                      Check on StockX
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

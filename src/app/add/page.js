@@ -22,13 +22,13 @@ const page = () => {
   const [inStock, setInStock] = useState(true);
   const [size, setSize] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [stockxLink, setStockxLink] = useState(false);
 
   useEffect(() => {
     if (user === null) {
       window.location = "/login";
     }
   }, [user]);
-
 
   const uploadMultiple = async (file) => {
     const formData = new FormData();
@@ -62,6 +62,7 @@ const page = () => {
         freeShipping: freeShipping,
         extraImg: arr.map((item) => item.url),
         inStock: inStock,
+        stockx: stockxLink,
       });
       toast.success(res.data.message);
       if (res.data) {
@@ -140,6 +141,14 @@ const page = () => {
               onChange={(e) => setSize(e.target.value.split(","))}
             />
             <label>kicks sizes*</label>
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter StockX Link"
+              onChange={(e) => setStockxLink(e.target.value)}
+            />
+            <label>stockX link*</label>
           </div>
           <div>
             <select onChange={(e) => setFreeShipping(e.target.value)}>

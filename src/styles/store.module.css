@@ -113,12 +113,13 @@
   position: absolute;
   left: 0;
   top: 2%;
-  font-weight: 700;
+  font-weight: 600;
   z-index: 20;
   background: red;
-  padding:5px 20px;
+  padding:5px 15px;
   text-transform: uppercase;
   color: #fff;
+  font-size: 14px;
 }
 @media screen and (max-width: 768px) {
   .filtersearch {

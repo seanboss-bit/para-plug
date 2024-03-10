@@ -98,7 +98,7 @@ const SingleShoe = () => {
         console.log(error);
       }
     }
-    if (size) {
+    if (size.length > 0) {
       try {
         const res = await publicRequest.put(`/product/${id.id}`, {
           sizes: size,
@@ -211,6 +211,15 @@ const SingleShoe = () => {
                   onChange={(e) => setSize(e.target.value.split(","))}
                 />
                 <label>kicks sizes*</label>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Enter StockX Link"
+                  onChange={(e) => kicksValue(e)}
+                  name="stockX"
+                />
+                <label>stockX link*</label>
               </div>
               <div>
                 <select onChange={(e) => kicksValue(e)} name="freeShipping">

@@ -6,9 +6,12 @@
 }
 .allslides h3 {
   text-transform: capitalize;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 .firstslide {
-  background: url("../../public/jordan.jpg");
+  background: url("../../public/three.jpg");
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,7 +32,7 @@
   height: 100%;
 }
 .secondslide {
-  background: url("../../public/nikesb.jpg");
+  background: url("../../public/two.jpg");
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,7 +53,7 @@
   height: 100%;
 }
 .thirdslide {
-  background: url("../../public/travis.jpg");
+  background: url("../../public/one.jpg");
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,8 +78,8 @@
 }
 .content p {
   margin-bottom: 40px;
-  font-size: 14px;
-  text-align:  justify;
+  font-size: 13px;
+  text-align: justify;
 }
 .content a {
   text-decoration: none;

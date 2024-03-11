@@ -1,6 +1,7 @@
 import Banner from "../../components/Banner";
 import Category from "../../components/Category";
 import Footer from "../../components/Footer";
+import Instagram from "../../components/Instagram";
 import Logos from "../../components/Logos";
 import Navbar from "../../components/Navbar";
 import NewsLetter from "../../components/NewsLetter";
@@ -26,6 +27,7 @@ export default function Home() {
         <Category />
         <Recomended />
         <NewsLetter />
+        {/* <Instagram /> */}
         <Footer />
       </>
     </>

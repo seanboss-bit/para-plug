@@ -7,7 +7,7 @@
 
 .subheading {
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 13px;
 }
 .sliderImg {

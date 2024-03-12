@@ -160,7 +160,7 @@ const CartBody = () => {
                     NGN {numberWithCommas(cart.total)}
                   </span>
                 </div>
-                {cart.total >= 150000 ? null : (
+                {cart.total >= 200000 ? null : (
                   <div className={styles.subtotal}>
                     <span>shipping</span>
                     <span className={styles.amount}>NGN 3,500</span>

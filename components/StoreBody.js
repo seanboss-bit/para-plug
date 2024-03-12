@@ -71,19 +71,7 @@ const StoreBody = () => {
     }
   }, [latest]);
 
-  const search = () => {
-    setShowShoe(
-      shoes.filter((item) => {
-        if (searchValue === "") {
-          return item;
-        } else if (
-          item.name.toLowerCase().includes(searchValue.toLocaleLowerCase())
-        ) {
-          return item;
-        }
-      })
-    );
-  };
+  const search = () => {};
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -132,7 +120,19 @@ const StoreBody = () => {
                 type="text"
                 placeholder="Search Here...."
                 onChange={(e) => {
-                  setSearchValue(e.target.value);
+                  setShowShoe(
+                    shoes.filter((item) => {
+                      if (e.target.value === "") {
+                        return item;
+                      } else if (
+                        item.name
+                          .toLowerCase()
+                          .includes(e.target.value.toLocaleLowerCase())
+                      ) {
+                        return item;
+                      }
+                    })
+                  );
                 }}
               />
               <button onClick={() => search()}>

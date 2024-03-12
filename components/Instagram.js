@@ -83,9 +83,8 @@ const Instagram = () => {
   return (
     <div className={styles.main}>
       <div className="container">
-        <h2 className={styles.heading}>As seen on instagram</h2>
         <p className={styles.subheading}>
-          Use #GotItOnParaplug and you could be featured.
+          Use #Gotitonparaplug on your instagram post and get featured here.
         </p>
         {allPosts.length > 0 ? (
           <Slider {...settings}>

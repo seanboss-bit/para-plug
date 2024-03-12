@@ -27,7 +27,7 @@ export default function Home() {
         <Category />
         <Recomended />
         <NewsLetter />
-        {/* <Instagram /> */}
+        <Instagram />
         <Footer />
       </>
     </>

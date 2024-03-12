@@ -13,6 +13,8 @@
 .sliderImg {
   height: 350px !important;
   padding: 10px;
+  position: relative;
+  overflow: hidden;
 }
 .sliderImg img {
   width: 100%;
@@ -21,4 +23,169 @@
 }
 .main {
   margin: 40px 0px;
+}
+.hover {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: #000000b1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.hover a {
+  text-transform: uppercase;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 30px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 10%;
+}
+.hover a:hover {
+  background: #fff;
+  color: #000;
+}
+
+.hover p {
+  color: #fff;
+  font-weight: 600;
+}
+.sliderImg:hover .hover {
+  top: 0%;
+}
+.ig {
+  margin: 30px 0px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.add {
+  text-transform: capitalize;
+  padding: 10px 30px;
+  border: 2px solid #000;
+  background: none;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+.add:hover {
+  background: #000;
+  color: #fff;
+}
+.dis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 40px 0px;
+}
+.dis img {
+  width: 100%;
+  object-fit: contain;
+  height: 180px;
+}
+
+.disbox {
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.disbox button {
+  background: red;
+  color: #fff;
+  padding: 10px 30px;
+  margin: 20px 0px;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.popupbg {
+  background: #000000b1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.poptitle {
+  text-transform: capitalize;
+  color: #000;
+}
+
+.popupbody {
+  background: #fff;
+  padding: 20px;
+  width: 70%;
+}
+.popinner {
+  display: flex;
+  gap: 10px;
+  margin: 30px 0px;
+}
+.popinner input {
+  width: 100%;
+  outline: none;
+  border: 2px solid #000;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.popinner input[type="file"] {
+  display: none;
+}
+
+.popinner img {
+  height: 450px;
+  width: 100%;
+}
+
+.popinner button {
+  width: 100%;
+  padding: 10px 30px;
+  text-transform: capitalize;
+  background: #000;
+  color: #fff;
+  border: 1px solid;
+  transition: 0.3s ease-in-out;
+}
+
+.popinner button:hover {
+  background: transparent;
+  color: #000;
+}
+.close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+}
+.close svg {
+  height: 30px;
+}
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0px 20px;
+  }
+  .dis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .popupbg{
+    z-index: 999;
+  }
+  .popinner{
+    flex-direction: column;
+    gap: 20px;
+  }
+  .popupbody{
+    width: 90%;
+  }
+  .popinner img{
+    height: 100%;
+  }
 }

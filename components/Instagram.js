@@ -3,6 +3,9 @@ import styles from "../src/styles/instagram.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
+import { publicRequest } from "../requests";
+import { useEffect, useState } from "react";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -27,6 +30,20 @@ function SamplePrevArrow(props) {
 }
 
 const Instagram = () => {
+  const [allPosts, setAllPosts] = useState([]);
+
+  const getPost = async () => {
+    try {
+      const data = await publicRequest.get("/post");
+      setAllPosts(data.data.allPost);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getPost();
+  }, []);
   var settings = {
     dots: true,
     infinite: false,
@@ -70,57 +87,21 @@ const Instagram = () => {
         <p className={styles.subheading}>
           Use #GotItOnParaplug and you could be featured.
         </p>
-        <Slider {...settings}>
-          <div className={styles.sliderImg}>
-            <img
-              src="https://www.wikihow.com/images/9/90/What_type_of_person_are_you_quiz_pic.png"
-              alt="#"
-            />
-          </div>
-          <div className={styles.sliderImg}>
-            <img
-              src="https://www.wikihow.com/images/9/90/What_type_of_person_are_you_quiz_pic.png"
-              alt="#"
-            />
-          </div>
-          <div className={styles.sliderImg}>
-            <img
-              src="https://www.wikihow.com/images/9/90/What_type_of_person_are_you_quiz_pic.png"
-              alt="#"
-            />
-          </div>
-          <div className={styles.sliderImg}>
-            <img
-              src="https://www.wikihow.com/images/9/90/What_type_of_person_are_you_quiz_pic.png"
-              alt="#"
-            />
-          </div>
-          <div className={styles.sliderImg}>
-            <img
-              src="https://www.wikihow.com/images/9/90/What_type_of_person_are_you_quiz_pic.png"
-              alt="#"
-            />
-          </div>
-          <div className={styles.sliderImg}>
-            <img
-              src="https://www.wikihow.com/images/9/90/What_type_of_person_are_you_quiz_pic.png"
-              alt="#"
-            />
-          </div>
-          <div className={styles.sliderImg}>
-            <img
-              src="https://www.wikihow.com/images/9/90/What_type_of_person_are_you_quiz_pic.png"
-              alt="#"
-            />
-          </div>
-          <div className={styles.sliderImg}>
-            <img
-              src="https://www.wikihow.com/images/9/90/What_type_of_person_are_you_quiz_pic.png"
-              alt="#"
-            />
-          </div>
-          
-        </Slider>
+        {allPosts.length > 0 ? (
+          <Slider {...settings}>
+            {allPosts.map((post) => (
+              <div className={styles.sliderImg} key={post?._id}>
+                <img src={post?.image} alt="#" />
+                <div className={styles.hover}>
+                  <Link href={"/store"}>shop now</Link>
+                  <p>@{post?.username}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        ) : (
+          <>NO POST YET</>
+        )}
       </div>
     </div>
   );

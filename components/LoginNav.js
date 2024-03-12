@@ -34,6 +34,7 @@ const LoginNav = () => {
             <Link href="/orders">Orders</Link>
             <Link href="/shoes">All Shoes</Link>
             <Link href="/users">All Customers</Link>
+            <Link href="/hashtag">Hashtag</Link>
           </div>
           <div className={styles.words} onClick={() => dispatch(logout())}>
             <div className={styles.username}>

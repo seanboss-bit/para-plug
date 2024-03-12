@@ -142,15 +142,15 @@ const StoreBody = () => {
             <div className={styles.cat}>
               <select onChange={(e) => setLatest(e.target.value)}>
                 <option value={"newest"}>Filter</option>
-                <option value={"newest"}>newest</option>
-                <option value={"asc"}>Price (low to high)</option>
-                <option value={"desc"}>Price (high to low)</option>
+                <option value={"newest"}>Newest</option>
+                <option value={"asc"}>Price (Low to high)</option>
+                <option value={"desc"}>Price (High to low)</option>
               </select>
             </div>
             <div className={styles.shoe}>
               <select onChange={(e) => setCategory(e.target.value)}>
                 <option value={"all"}>All</option>
-                <option value={"jordans"}>Air Jordans</option>
+                <option value={"jordans"}>Air Jordan</option>
                 <option value={"nikes"}>Nike</option>
               </select>
             </div>

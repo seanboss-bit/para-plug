@@ -81,7 +81,7 @@
 .write svg {
   height: 20px;
 }
-.socials{
+.socials {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -105,5 +105,8 @@
   }
   .wordings {
     padding: 10px;
+  }
+  .two {
+    flex-direction: column;
   }
 }

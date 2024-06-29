@@ -109,7 +109,7 @@ const Register = () => {
               alt="#"
             />
           </label>
-          <span>please select an image</span>
+          <span>please click the icon above to select an image</span>
         </div>
         <div className={styles.loginFrame}>
           <div className={styles.loginBox}>

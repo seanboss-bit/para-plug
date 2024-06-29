@@ -138,7 +138,7 @@ const Product = () => {
                   ) : (
                     <p
                       style={{
-                        margin: "40px 0px",
+                        margin: "30px 0px",
                         fontSize: "20px",
                         textAlign: "center",
                         cursor: "pointer",

@@ -38,7 +38,7 @@ const Navbar = () => {
           )}
           <Link href="/" className={styles.imgcont}>
             <Image
-              src="/head.png"
+              src="https://res.cloudinary.com/dvo4tlcrx/image/upload/v1719649548/head_e9wnex.png"
               alt="header_image"
               width={100}
               height={100}

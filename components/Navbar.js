@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import styles from "../src/styles/nav.module.css";
 import Link from "next/link";
 import {
@@ -13,22 +13,12 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
-  const [navScroll, setNavScroll] = useState(false);
   const route = usePathname();
   const router = useRouter();
   const products = useSelector((state) => state.cart?.products);
   const user = useSelector((state) => state.user.user);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY >= 110) {
-        setNavScroll(true);
-      } else {
-        setNavScroll(false);
-      }
-    });
-  }, []);
   return (
-    <div className={navScroll ? styles.mainnav2 : styles.mainnav}>
+    <div className={ styles.mainnav}>
       <div className="container">
         <div className={styles.navinner}>
           {!user ? null : (

@@ -12,7 +12,7 @@
   transition: all 0.3s ease-in-out;
   background: #fff;
 }
-.mainnav2 {
+/* .mainnav2 {
   position: fixed;
   top: 0;
   width: 100%;
@@ -20,7 +20,7 @@
   z-index: 98;
   transition: all 0.3s ease-in-out;
   background: #fff;
-}
+} */
 .navinner {
   display: flex;
   align-items: center;

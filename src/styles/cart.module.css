@@ -2,6 +2,7 @@
   padding-top: 20px;
   margin-bottom: 30px;
   position: relative;
+  min-height: 50vh;
 }
 .cartbody h1 {
   text-align: center;
@@ -216,6 +217,10 @@
   border: none;
   border-bottom: 1px solid #000;
 }
+.userdata input:focus,
+.userdata textarea:focus {
+  border-color: #25acff;
+}
 .userdata div {
   display: grid;
   gap: 20px;
@@ -235,6 +240,14 @@
   text-transform: uppercase;
   font-weight: 500;
   border: none;
+  border-radius: 10px;
+  border: 1px solid #000;
+  transition: all ease-in-out 0.4s;
+}
+.done:hover {
+  background: transparent;
+  color: #000;
+  transition: all ease-in-out 0.4s;
 }
 .done img {
   width: 20px;
@@ -243,7 +256,8 @@
 .accdetailsbody {
   background: #fff;
   padding: 20px;
-  width: 70%;
+  width: 50%;
+  border-radius: 20px;
 }
 .accdetailscontainer {
   position: fixed;
@@ -261,6 +275,7 @@
   text-align: center;
   margin-bottom: 15px;
   padding: 10px;
+  border-radius: 10px;
 }
 .closebtn svg {
   height: 30px;

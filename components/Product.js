@@ -95,17 +95,17 @@ const Product = () => {
                   </span>
                   <p className={styles.cat}>{singleItem?.category}</p>
                   <h3 className={styles.infoname}>{singleItem?.name}</h3>
-                  <p className={styles.pl}>
+                  <div className={styles.pl}>
                     {singleItem?.slashPrice ? (
                       <span>
                         NGN {numberWithCommas(singleItem?.slashPrice)}
                       </span>
                     ) : null}
-                    <p>NGN {numberWithCommas(singleItem?.price)}</p>
+                    <p className={styles.co}>NGN {numberWithCommas(singleItem?.price)}</p>
                     {singleItem?.freeShipping ? (
                       <span>+ free shipping</span>
                     ) : null}
-                  </p>
+                  </div>
                   <p className={styles.desc}>{singleItem?.description}</p>
                 </div>
                 <div>

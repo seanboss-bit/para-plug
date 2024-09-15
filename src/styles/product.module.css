@@ -58,8 +58,9 @@
   font-size: 19px;
   text-transform: capitalize;
 }
-.pl p {
+.co{
   font-weight: 700;
+  color: #000 !important;
 }
 .pl span {
   color: #bbb;

@@ -10,14 +10,12 @@ export const metadata = {
 };
 
 const page = () => {
- 
   return (
-    <div>
-
+    <>
       <Navbar />
       <Refund />
       <Footer />
-    </div>
+    </>
   );
 };
 

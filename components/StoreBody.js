@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import styles from "../src/styles/store.module.css";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Result from "./Result";

@@ -22,7 +22,8 @@
 }
 .productmain {
   /* margin-top: 100px; */
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
+  min-height: 50vh;
 }
 .mainimg {
   width: 100%;

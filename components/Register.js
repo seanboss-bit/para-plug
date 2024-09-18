@@ -115,7 +115,7 @@ const Register = () => {
           <div className={styles.loginBox}>
             <input
               type="text"
-              placeholder="Fullname"
+              placeholder="Firstname"
               onChange={(e) => setFullname(e.target.value)}
             />
             <UserIcon />
@@ -123,7 +123,7 @@ const Register = () => {
           <div className={styles.loginBox}>
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Lastname"
               onChange={(e) => setUsername(e.target.value)}
             />
             <UserIcon />

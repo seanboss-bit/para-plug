@@ -74,6 +74,7 @@ const SingleOrder = async () => {
           <h4>customer {order?.name}</h4>
           <h4>email: {order?.email}</h4>
           <h4>phone: {order?.phone}</h4>
+          <h4>alt phone: {order?.alt_phone}</h4>
           <h4>address: {order?.address}</h4>
         </div>
         <div className="bottom">

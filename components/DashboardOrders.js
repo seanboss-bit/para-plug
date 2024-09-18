@@ -4,6 +4,7 @@ import styles from "../src/styles/dashboard.module.css";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { publicRequest } from "../requests";
 import { useSelector } from "react-redux";
+import Moment from "react-moment";
 
 const DashboardOrders = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -61,7 +62,13 @@ const DashboardOrders = () => {
                         NGN {numberWithCommas(order.total)}
                       </span>
                       <div className={styles.sum}>
-                        <p>4th August 2023</p>
+                        <p>
+                          {" "}
+                          <Moment
+                            date={order?.createdAt}
+                            format="DD MMMM yyyy"
+                          />
+                        </p>
                         <button
                           onClick={() => {
                             setShowDetails(true);

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { publicRequest } from "../../../requests";
 import Loading from "../../../components/Loading";
 import LoginNav from "../../../components/LoginNav";
+import Moment from "react-moment";
 
 const page = () => {
   const [allOrders, setAllOrders] = useState([]);
@@ -44,7 +45,10 @@ const page = () => {
                 >
                   <div className={styles.name}>
                     <p>new order from {order?.name}</p>
-                    <span>on {order?.createdAt}</span>
+                    <span>
+                      on{" "}
+                      <Moment date={order?.createdAt} format="DD MMMM yyyy" />
+                    </span>
                   </div>
                   <div className={styles.orderend}>
                     {order?.completed ? null : (

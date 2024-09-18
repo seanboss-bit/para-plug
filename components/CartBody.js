@@ -37,6 +37,8 @@ const CartBody = () => {
   const [email, setEmail] = useState(user?.email);
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [altNumber, setAltNumber] = useState("");
+  const [lname, setLname] = useState(user?.username);
   const router = useRouter();
   const remove = (item) => {
     dispatch(removeFromCart(item));
@@ -58,6 +60,8 @@ const CartBody = () => {
       phone,
       userId: user?._id,
       total: cart.total >= 150000 ? cart.total : cart.total + 3500,
+      lname,
+      alt_phone: altNumber,
     });
     toast.success(res.data.message);
     router.push("/thanks");
@@ -96,7 +100,14 @@ const CartBody = () => {
   const initializePayment = usePaystackPayment(config);
 
   const toPay = () => {
-    if (name === "" || address === "" || phone === "" || email === "") {
+    if (
+      name === "" ||
+      address === "" ||
+      phone === "" ||
+      email === "" ||
+      altNumber === "" ||
+      lname === ""
+    ) {
       toast.error("All Fields Required");
     } else {
       initializePayment(onSuccess, onClose);
@@ -206,26 +217,39 @@ const CartBody = () => {
                 <div>
                   <input
                     type="text"
-                    placeholder="Enter Name"
-                    value={user?.fullName}
+                    placeholder="Firstname"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                   <input
-                    type="email"
-                    placeholder="Enter Your Email"
-                    value={user?.email}
+                    type="text"
+                    placeholder="Lastname"
+                    value={lname}
+                    onChange={(e) => setLname(e.target.value)}
                   />
                 </div>
+                <input
+                  type="email"
+                  placeholder="Enter Your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <div>
                   <input
                     type="number"
                     placeholder="Enter Phone Number"
                     onChange={(e) => setPhone(e.target.value)}
                   />
-                  <textarea
-                    placeholder="Enter Your Address"
-                    onChange={(e) => setAddress(e.target.value)}
+                  <input
+                    type="number"
+                    placeholder="Enter Alt Phone Number"
+                    onChange={(e) => setAltNumber(e.target.value)}
                   />
                 </div>
+                <textarea
+                  placeholder="Enter Your Address"
+                  onChange={(e) => setAddress(e.target.value)}
+                />
               </form>
               <button className={styles.done} onClick={() => toPay()}>
                 <img

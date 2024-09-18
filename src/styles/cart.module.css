@@ -226,9 +226,13 @@
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 .userdata {
   margin-top: 20px;
+}
+.userdata textarea{
+  margin: 20px 0px;
 }
 .done {
   width: 100%;

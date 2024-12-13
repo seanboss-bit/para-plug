@@ -50,7 +50,7 @@
 }
 @media screen and (max-width: 768px) {
   .main {
-    background: url("../../public/banners.jpg") center center no-repeat scroll !important;
+    background: url("../../public/him.png") center center no-repeat scroll !important;
   }
   .inner {
     text-align: center;

@@ -1,0 +1,11 @@
+.container {
+  position: fixed;
+  background: white;
+  bottom: 60px;
+  left: -40px;
+  padding: 10px 90px 10px 50px;
+  text-transform: capitalize;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  transform: rotate(30deg);
+  font-weight: 600;
+}

@@ -116,6 +116,35 @@
   background: transparent;
   color: #000;
 }
+.imgcont {
+  position: relative;
+}
+.christmasHat {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top: 19%;
+  left: 0;
+  transform: rotate(-12deg);
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+.hatbody {
+  fill: #ff0000;
+  stroke: #880000;
+  stroke-width: 2;
+}
+
+.hattrim {
+  fill: #ffffff;
+  stroke: #dddddd;
+  stroke-width: 2;
+}
+
+.hatpom {
+  fill: #ffffff;
+  stroke: #dddddd;
+  stroke-width: 2;
+}
 @media screen and (max-width: 1200px) {
   .small {
     display: block;

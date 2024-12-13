@@ -59,7 +59,7 @@ const CartBody = () => {
       address,
       phone,
       userId: user?._id,
-      total: cart.total >= 150000 ? cart.total : cart.total + 3500,
+      total: cart.total >= 300000 ? cart.total : cart.total + 3500,
       lname,
       alt_phone: altNumber,
     });
@@ -78,7 +78,7 @@ const CartBody = () => {
     reference: new Date().getTime().toString(),
     email: email,
     amount:
-      cart.total >= 150000 ? cart.total * 100 : cart.total * 100 + 3500 * 100,
+      cart.total >= 300000 ? cart.total * 100 : cart.total * 100 + 3500 * 100,
 
     // publicKey: "pk_test_57fa1e02ffb5765c3aaa7c812852a52739366451",
     publicKey: "pk_live_ac6b008808fcabb5ad2b4fe75792b852672127dc",
@@ -171,7 +171,7 @@ const CartBody = () => {
                     NGN {numberWithCommas(cart.total)}
                   </span>
                 </div>
-                {cart.total >= 200000 ? null : (
+                {cart.total >= 300000 ? null : (
                   <div className={styles.subtotal}>
                     <span>shipping</span>
                     <span className={styles.amount}>NGN 3,500</span>
@@ -181,7 +181,7 @@ const CartBody = () => {
                   <span>total</span>
                   <span className={styles.amount}>
                     NGN{" "}
-                    {cart.total >= 150000
+                    {cart.total >= 300000
                       ? numberWithCommas(cart.total)
                       : numberWithCommas(cart.total + 3500)}
                   </span>

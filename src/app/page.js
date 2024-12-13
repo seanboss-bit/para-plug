@@ -6,6 +6,7 @@ import Logos from "../../components/Logos";
 import Navbar from "../../components/Navbar";
 import NewsLetter from "../../components/NewsLetter";
 import Recomended from "../../components/Recomended";
+import ScrollingText from "../../components/ScrollingText";
 import Showcase from "../../components/Showcase";
 
 export const metadata = {
@@ -19,7 +20,12 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <Banner />
+      {/* <Banner /> */}
+      <ScrollingText
+        text="Get free delivery on all orders above N300k • Get free acrylic shox box on all purchase • Show trending releases."
+        speed={3}
+        className="bg-green-100"
+      />
       <>
         <Navbar />
         <Showcase />

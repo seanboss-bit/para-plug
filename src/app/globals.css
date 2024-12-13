@@ -3,3 +3,11 @@
 html {
   font-family: "Poppins", sans-serif;
 }
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -1,9 +1,9 @@
 .container {
   position: fixed;
   background: white;
-  bottom: 37px;
+  bottom: 20px;
   left: -40px;
-  padding: 10px 90px 10px 28px;
+  padding: 10px 90px 10px 30px;
   text-transform: capitalize;
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   transform: rotate(30deg);
@@ -14,8 +14,8 @@
 }
 @media screen and (max-width: 768px){
   .container{
-    padding: 10px 50px 10px 40px;
-    bottom: 10px;
+    padding: 10px 50px 10px 60px;
+    bottom: -4px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@
     left: -49px;
   }
   .container p{
-    max-width: 70%;
+    max-width: 90%;
     text-align: center;
     margin-left: -50px;
   }

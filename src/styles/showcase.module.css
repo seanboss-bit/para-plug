@@ -1,6 +1,6 @@
 .main {
   min-height: 70vh;
-  background: url("../../public/him.png");
+  background: url("../../public/banners.jpg");
   background-size: cover !important;
   position: relative !important;
   background-position: center center !important;
@@ -50,7 +50,7 @@
 }
 @media screen and (max-width: 768px) {
   .main {
-    background: url("../../public/him.png") center center no-repeat scroll !important;
+    background: url("../../public/banners.jpg") center center no-repeat scroll !important;
   }
   .inner {
     text-align: center;

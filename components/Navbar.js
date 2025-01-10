@@ -33,11 +33,6 @@ const Navbar = () => {
               width={100}
               height={100}
             />
-            <svg viewBox="0 0 100 100" className={styles.christmasHat}>
-              <path d="M50 10 L80 70 L20 70 Z" className={styles.hatbody} />
-              <path d="M20 70 L80 70 Q50 80 20 70" className={styles.hattrim} />
-              <circle cx="50" cy="10" r="6" className={styles.hatpom} />
-            </svg>
           </Link>
           <div className={styles.res}>
             <div className={openNav ? styles.reslink : styles.links}>

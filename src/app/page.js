@@ -22,7 +22,7 @@ export default function Home() {
     <>
       {/* <Banner /> */}
       <ScrollingText
-        text="Get FREE delivery on all orders above NGN300,000 • Get FREE acrylic shox box on all purchase • Show trending releases."
+        text="Get FREE delivery on all orders above NGN300,000 • Acrylic box available now • Show trending releases."
         speed={3}
         className="bg-green-100"
       />

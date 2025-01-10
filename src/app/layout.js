@@ -2,7 +2,6 @@ import "./globals.css";
 import { Providers } from "../redux/provider";
 import Whatsapp from "../../components/Whatsapp";
 import { Poppins } from "next/font/google";
-import Strap from "../../components/Strap";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -42,7 +41,6 @@ export default function RootLayout({ children }) {
       <body className={poppins.className} suppressHydrationWarning={true}>
         <Providers>{children}</Providers>
         <Whatsapp />
-        <Strap />
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "ParaPlug Store - Nike and Jordan Sneakers Store",
+  title: "Paraplug Store - Nike and Jordan Sneakers Store",
   description: "Para Plug",
   icons: {
     icon: "/para.png",
